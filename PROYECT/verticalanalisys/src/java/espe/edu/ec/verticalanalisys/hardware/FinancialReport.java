@@ -1,0 +1,242 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package espe.edu.ec.verticalanalisys.hardware;
+
+/**
+ *
+ * @author jorge
+ */
+public class FinancialReport {
+    private String id_finanacialData;
+    private String id_company;
+    private String id_user;
+    private String name_user;
+    private int year;
+    private double sales;
+    private double salesCost;
+    private double grossProfit;
+    private double expensesAdmiSales;
+    private double depreciations;
+    private double interestPaid;
+    private double profitBeforeTaxes;
+    private double taxes;
+    private double exerciseUtility;
+
+    public FinancialReport(String id_finanacialData, String id_company, String id_user, String name_user, int year, double sales, double salesCost, double grossProfit, double expensesAdmiSales, double depreciations, double interestPaid, double profitBeforeTaxes, double taxes, double exerciseUtility) {
+        this.id_finanacialData = id_finanacialData;
+        this.id_company = id_company;
+        this.id_user = id_user;
+        this.name_user = name_user;
+        this.year = year;
+        this.sales = sales;
+        this.salesCost = salesCost;
+        this.grossProfit = grossProfit;
+        this.expensesAdmiSales = expensesAdmiSales;
+        this.depreciations = depreciations;
+        this.interestPaid = interestPaid;
+        this.profitBeforeTaxes = profitBeforeTaxes;
+        this.taxes = taxes;
+        this.exerciseUtility = exerciseUtility;
+    }
+
+    /**
+     * @return the id_finanacialData
+     */
+    public String getId_finanacialData() {
+        return id_finanacialData;
+    }
+
+    /**
+     * @param id_finanacialData the id_finanacialData to set
+     */
+    public void setId_finanacialData(String id_finanacialData) {
+        this.id_finanacialData = id_finanacialData;
+    }
+
+    /**
+     * @return the id_company
+     */
+    public String getId_company() {
+        return id_company;
+    }
+
+    /**
+     * @param id_company the id_company to set
+     */
+    public void setId_company(String id_company) {
+        this.id_company = id_company;
+    }
+
+    /**
+     * @return the id_user
+     */
+    public String getId_user() {
+        return id_user;
+    }
+
+    /**
+     * @param id_user the id_user to set
+     */
+    public void setId_user(String id_user) {
+        this.id_user = id_user;
+    }
+
+    /**
+     * @return the name_user
+     */
+    public String getName_user() {
+        return name_user;
+    }
+
+    /**
+     * @param name_user the name_user to set
+     */
+    public void setName_user(String name_user) {
+        this.name_user = name_user;
+    }
+
+    /**
+     * @return the year
+     */
+    public int getYear() {
+        return year;
+    }
+
+    /**
+     * @param year the year to set
+     */
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    /**
+     * @return the sales
+     */
+    public double getSales() {
+        return sales;
+    }
+
+    /**
+     * @param sales the sales to set
+     */
+    public void setSales(double sales) {
+        this.sales = sales;
+    }
+
+    /**
+     * @return the salesCost
+     */
+    public double getSalesCost() {
+        return salesCost;
+    }
+
+    /**
+     * @param salesCost the salesCost to set
+     */
+    public void setSalesCost(double salesCost) {
+        this.salesCost = salesCost;
+    }
+
+    /**
+     * @return the grossProfit
+     */
+    public double getGrossProfit() {
+        return grossProfit;
+    }
+
+    /**
+     * @param grossProfit the grossProfit to set
+     */
+    public void setGrossProfit(double grossProfit) {
+        this.grossProfit = grossProfit;
+    }
+
+    /**
+     * @return the expensesAdmiSales
+     */
+    public double getExpensesAdmiSales() {
+        return expensesAdmiSales;
+    }
+
+    /**
+     * @param expensesAdmiSales the expensesAdmiSales to set
+     */
+    public void setExpensesAdmiSales(double expensesAdmiSales) {
+        this.expensesAdmiSales = expensesAdmiSales;
+    }
+
+    /**
+     * @return the depreciations
+     */
+    public double getDepreciations() {
+        return depreciations;
+    }
+
+    /**
+     * @param depreciations the depreciations to set
+     */
+    public void setDepreciations(double depreciations) {
+        this.depreciations = depreciations;
+    }
+
+    /**
+     * @return the interestPaid
+     */
+    public double getInterestPaid() {
+        return interestPaid;
+    }
+
+    /**
+     * @param interestPaid the interestPaid to set
+     */
+    public void setInterestPaid(double interestPaid) {
+        this.interestPaid = interestPaid;
+    }
+
+    /**
+     * @return the profitBeforeTaxes
+     */
+    public double getProfitBeforeTaxes() {
+        return profitBeforeTaxes;
+    }
+
+    /**
+     * @param profitBeforeTaxes the profitBeforeTaxes to set
+     */
+    public void setProfitBeforeTaxes(double profitBeforeTaxes) {
+        this.profitBeforeTaxes = profitBeforeTaxes;
+    }
+
+    /**
+     * @return the taxes
+     */
+    public double getTaxes() {
+        return taxes;
+    }
+
+    /**
+     * @param taxes the taxes to set
+     */
+    public void setTaxes(double taxes) {
+        this.taxes = taxes;
+    }
+
+    /**
+     * @return the exerciseUtility
+     */
+    public double getExerciseUtility() {
+        return exerciseUtility;
+    }
+
+    /**
+     * @param exerciseUtility the exerciseUtility to set
+     */
+    public void setExerciseUtility(double exerciseUtility) {
+        this.exerciseUtility = exerciseUtility;
+    }
+    
+    
+}
