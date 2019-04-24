@@ -10,7 +10,7 @@ import javax.ws.rs.core.Application;
 
 /**
  *
- * @author jorge
+ * @author jorge, jess, david
  */
 @javax.ws.rs.ApplicationPath("financialanalisys")
 public class ApplicationConfig extends Application {

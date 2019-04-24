@@ -21,7 +21,7 @@ import javax.ws.rs.core.MediaType;
 /**
  * REST Web Service
  *
- * @author david
+ * @author david, jess, david
  */
 @Path("financial")
 public class Financial {
