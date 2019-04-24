@@ -30,6 +30,7 @@ public class ApplicationConfig extends Application {
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(espe.edu.ec.verticalanalisys.services.Companies.class);
+        resources.add(espe.edu.ec.verticalanalisys.services.Financial.class);
         resources.add(espe.edu.ec.verticalanalisys.services.Users.class);
     }
     
