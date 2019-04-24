@@ -58,6 +58,44 @@ public class DBConnect {
         }
     
     }
+    public void insertCompany (String id_company, String name_company, String description_company,String address_company, String phone_company) throws SQLException{
+        String query;
+        DBConnect connect=new DBConnect();
+        String table="company";
+        query="INSERT INTO "+table+" (id_company,name_company,description_company,address_company,phone_company) values (?,?,?,?,?)";
+        try (PreparedStatement state = connect.connect().prepareStatement(query)) {
+            state.setString(1,id_company);
+            state.setString(2,name_company);
+            state.setString(3,description_company);
+            state.setString(4,address_company);
+            state.setString(5,phone_company);
+            state.executeUpdate();
+        }
+    
+    }
+    public void insertFinancialData (String id_financialData, String id_company, int year,double sales,double salesCost,double grossProfit,
+                                    double expensesAdmiSales,double depreciations, double interestPaid,double profitBeforeTaxes,double taxes,double excerciseUtility) throws SQLException{
+        String query;
+        DBConnect connect=new DBConnect();
+        String table="financialdata";
+        query="INSERT INTO "+table+" (id_financialData,id_company,year,sales,salesCost,grossProfit,expensesAdmiSales,depreciations,interestPaid,profitBeforeTaxes,taxes,excerciseUtility) values (?,?,?,?,?,?,?,?,?,?,?,?)";
+        try (PreparedStatement state = connect.connect().prepareStatement(query)) {
+            state.setString(1,id_financialData);
+            state.setString(2,id_company);
+            state.setInt(3,year);
+            state.setDouble(4,sales);
+            state.setDouble(5,salesCost);
+            state.setDouble(6,grossProfit);
+            state.setDouble(7,expensesAdmiSales);
+            state.setDouble(8,depreciations);
+            state.setDouble(9,interestPaid);
+            state.setDouble(10,profitBeforeTaxes);
+            state.setDouble(11,taxes);
+            state.setDouble(12,excerciseUtility);
+            state.executeUpdate();
+        }
+    
+    }
     public static void main(String[] args){
         DBConnect c= new DBConnect();
         c.connect();

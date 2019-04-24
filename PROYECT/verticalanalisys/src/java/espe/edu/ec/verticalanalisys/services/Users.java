@@ -6,14 +6,12 @@
 package espe.edu.ec.verticalanalisys.services;
 
 import espe.edu.ec.verticalanalisys.connecction.DBConnect;
-import espe.edu.ec.verticalanalisys.hardware.User;
 import java.sql.SQLException;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Produces;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
-import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PUT;
 import javax.ws.rs.PathParam;
@@ -45,7 +43,7 @@ public class Users {
     @Path("{id_user}/{name_user}/{pass_user}/{id_company}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public boolean registerData(@PathParam("id_user") String id_user, @PathParam("name_user") String name_user, @PathParam("pass_user") String pass_user, @PathParam("id_company") String id_company) throws SQLException {
+    public boolean registerDataUsers(@PathParam("id_user") String id_user, @PathParam("name_user") String name_user, @PathParam("pass_user") String pass_user, @PathParam("id_company") String id_company) throws SQLException {
         boolean confirm;
         DBConnect db= new DBConnect();
         if(confirm=db.confirmConnect()){
