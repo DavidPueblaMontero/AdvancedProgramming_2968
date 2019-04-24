@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="java.espe.edu.ec.verticalanalisys.connecction">
+  <ClassDiagramComponents>
+    <Class name="DBConnect" package="espe.edu.ec.verticalanalisys.connecction" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="ct" type="Connection" visibility="package"/>
+        <Field name="bd" type="String" visibility="package"/>
+        <Field name="url" type="String" visibility="package"/>
+        <Field name="user" type="String" visibility="package"/>
+        <Field name="pass" type="String" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="connect" returnType="Connection" visibility="public"/>
+        <Method name="confirmConnect" returnType="boolean" visibility="public"/>
+        <Method name="insertUser" returnType="void" visibility="public">
+          <Argument type="String" name="id_user"/>
+          <Argument type="String" name="name_user"/>
+          <Argument type="String" name="pass_user"/>
+          <Argument type="String" name="id_company"/>
+        </Method>
+        <Method name="insertCompany" returnType="void" visibility="public">
+          <Argument type="String" name="id_company"/>
+          <Argument type="String" name="name_company"/>
+          <Argument type="String" name="description_company"/>
+          <Argument type="String" name="address_company"/>
+          <Argument type="String" name="phone_company"/>
+        </Method>
+        <Method name="insertFinancialData" returnType="void" visibility="public">
+          <Argument type="String" name="id_financialData"/>
+          <Argument type="String" name="id_company"/>
+          <Argument type="int" name="year"/>
+          <Argument type="double" name="sales"/>
+          <Argument type="double" name="salesCost"/>
+          <Argument type="double" name="grossProfit"/>
+          <Argument type="double" name="expensesAdmiSales"/>
+          <Argument type="double" name="depreciations"/>
+          <Argument type="double" name="interestPaid"/>
+          <Argument type="double" name="profitBeforeTaxes"/>
+          <Argument type="double" name="taxes"/>
+          <Argument type="double" name="excerciseUtility"/>
+        </Method>
+        <Method name="report" returnType="FinancialReport" visibility="public">
+          <Argument type="String" name="id_company"/>
+          <Argument type="int" name="year"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

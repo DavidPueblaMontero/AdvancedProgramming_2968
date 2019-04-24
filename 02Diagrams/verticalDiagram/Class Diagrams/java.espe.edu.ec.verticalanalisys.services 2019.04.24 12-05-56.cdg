@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="java.espe.edu.ec.verticalanalisys.services">
+  <ClassDiagramComponents>
+    <Class name="ApplicationConfig" package="espe.edu.ec.verticalanalisys.services" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getClasses" returnType="Set&lt;Class&lt;?&gt;&gt;" visibility="public"/>
+        <Method name="addRestResourceClasses" returnType="void" visibility="private">
+          <Argument type="Set&lt;Class&lt;?&gt;&gt;" name="resources"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Companies" package="espe.edu.ec.verticalanalisys.services" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="context" type="UriInfo" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="registerDataCompanies" returnType="boolean" visibility="public">
+          <Argument type="String" name="id_company"/>
+          <Argument type="String" name="name_company"/>
+          <Argument type="String" name="description_company"/>
+          <Argument type="String" name="address_company"/>
+          <Argument type="String" name="phone_company"/>
+        </Method>
+        <Method name="putJson" returnType="void" visibility="public">
+          <Argument type="Company" name="content"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Financial" package="espe.edu.ec.verticalanalisys.services" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="context" type="UriInfo" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="registerDataFinancialValues" returnType="boolean" visibility="public">
+          <Argument type="String" name="id_financialData"/>
+          <Argument type="String" name="id_company"/>
+          <Argument type="int" name="year"/>
+          <Argument type="double" name="sales"/>
+          <Argument type="double" name="salesCost"/>
+          <Argument type="double" name="grossProfit"/>
+          <Argument type="double" name="expensesAdminSales"/>
+          <Argument type="double" name="depreciations"/>
+          <Argument type="double" name="interestPaid"/>
+          <Argument type="double" name="profitBeforeTaxes"/>
+          <Argument type="double" name="taxes"/>
+          <Argument type="double" name="exerciseUtility"/>
+        </Method>
+        <Method name="putJson" returnType="void" visibility="public">
+          <Argument type="FinancialData" name="content"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Report" package="espe.edu.ec.verticalanalisys.services" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields>
+        <Field name="context" type="UriInfo" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="returnValues" returnType="FinancialReport" visibility="public">
+          <Argument type="String" name="id_company"/>
+          <Argument type="int" name="year"/>
+        </Method>
+        <Method name="putJson" returnType="void" visibility="public">
+          <Argument type="FinancialReport" name="content"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Users" package="espe.edu.ec.verticalanalisys.services" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields>
+        <Field name="context" type="UriInfo" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="registerDataUsers" returnType="boolean" visibility="public">
+          <Argument type="String" name="id_user"/>
+          <Argument type="String" name="name_user"/>
+          <Argument type="String" name="pass_user"/>
+          <Argument type="String" name="id_company"/>
+        </Method>
+        <Method name="putJson" returnType="void" visibility="public">
+          <Argument type="espe.edu.ec.verticalanalisys.hardware.User" name="content"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="espe.edu.ec.verticalanalisys.services.Report" target="espe.edu.ec.verticalanalisys.services.Report" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="espe.edu.ec.verticalanalisys.services.Financial" target="espe.edu.ec.verticalanalisys.services.Financial" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

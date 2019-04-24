@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="java.espe.edu.ec.verticalanalisys.hardware">
+  <ClassDiagramComponents>
+    <Class name="Company" package="espe.edu.ec.verticalanalisys.hardware" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="id_company" type="String" visibility="private"/>
+        <Field name="name_company" type="String" visibility="private"/>
+        <Field name="description_company" type="String" visibility="private"/>
+        <Field name="address_company" type="String" visibility="private"/>
+        <Field name="phone_company" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="id_company"/>
+          <Argument type="String" name="name_company"/>
+          <Argument type="String" name="description_company"/>
+          <Argument type="String" name="address_company"/>
+          <Argument type="String" name="phone_company"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId_company" returnType="String" visibility="public"/>
+        <Method name="setId_company" returnType="void" visibility="public">
+          <Argument type="String" name="id_company"/>
+        </Method>
+        <Method name="getName_company" returnType="String" visibility="public"/>
+        <Method name="setName_company" returnType="void" visibility="public">
+          <Argument type="String" name="name_company"/>
+        </Method>
+        <Method name="getDescription_company" returnType="String" visibility="public"/>
+        <Method name="setDescription_company" returnType="void" visibility="public">
+          <Argument type="String" name="description_company"/>
+        </Method>
+        <Method name="getAddress_company" returnType="String" visibility="public"/>
+        <Method name="setAddress_company" returnType="void" visibility="public">
+          <Argument type="String" name="address_company"/>
+        </Method>
+        <Method name="getPhone_company" returnType="String" visibility="public"/>
+        <Method name="setPhone_company" returnType="void" visibility="public">
+          <Argument type="String" name="phone_company"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="FinancialData" package="espe.edu.ec.verticalanalisys.hardware" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="id_finanacialData" type="String" visibility="private"/>
+        <Field name="id_company" type="String" visibility="private"/>
+        <Field name="year" type="int" visibility="private"/>
+        <Field name="sales" type="double" visibility="private"/>
+        <Field name="salesCost" type="double" visibility="private"/>
+        <Field name="grossProfit" type="double" visibility="private"/>
+        <Field name="expensesAdmiSales" type="double" visibility="private"/>
+        <Field name="depreciations" type="double" visibility="private"/>
+        <Field name="interestPaid" type="double" visibility="private"/>
+        <Field name="profitBeforeTaxes" type="double" visibility="private"/>
+        <Field name="taxes" type="double" visibility="private"/>
+        <Field name="exerciseUtility" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="id_finanacialData"/>
+          <Argument type="String" name="id_company"/>
+          <Argument type="int" name="year"/>
+          <Argument type="double" name="sales"/>
+          <Argument type="double" name="salesCost"/>
+          <Argument type="double" name="grossProfit"/>
+          <Argument type="double" name="expensesAdmiSales"/>
+          <Argument type="double" name="depreciations"/>
+          <Argument type="double" name="interestPaid"/>
+          <Argument type="double" name="profitBeforeTaxes"/>
+          <Argument type="double" name="taxes"/>
+          <Argument type="double" name="exerciseUtility"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId_finanacialData" returnType="String" visibility="public"/>
+        <Method name="setId_finanacialData" returnType="void" visibility="public">
+          <Argument type="String" name="id_finanacialData"/>
+        </Method>
+        <Method name="getId_company" returnType="String" visibility="public"/>
+        <Method name="setId_company" returnType="void" visibility="public">
+          <Argument type="String" name="id_company"/>
+        </Method>
+        <Method name="getYear" returnType="int" visibility="public"/>
+        <Method name="setYear" returnType="void" visibility="public">
+          <Argument type="int" name="year"/>
+        </Method>
+        <Method name="getSales" returnType="double" visibility="public"/>
+        <Method name="setSales" returnType="void" visibility="public">
+          <Argument type="double" name="sales"/>
+        </Method>
+        <Method name="getSalesCost" returnType="double" visibility="public"/>
+        <Method name="setSalesCost" returnType="void" visibility="public">
+          <Argument type="double" name="salesCost"/>
+        </Method>
+        <Method name="getGrossProfit" returnType="double" visibility="public"/>
+        <Method name="setGrossProfit" returnType="void" visibility="public">
+          <Argument type="double" name="grossProfit"/>
+        </Method>
+        <Method name="getExpensesAdmiSales" returnType="double" visibility="public"/>
+        <Method name="setExpensesAdmiSales" returnType="void" visibility="public">
+          <Argument type="double" name="expensesAdmiSales"/>
+        </Method>
+        <Method name="getDepreciations" returnType="double" visibility="public"/>
+        <Method name="setDepreciations" returnType="void" visibility="public">
+          <Argument type="double" name="depreciations"/>
+        </Method>
+        <Method name="getInterestPaid" returnType="double" visibility="public"/>
+        <Method name="setInterestPaid" returnType="void" visibility="public">
+          <Argument type="double" name="interestPaid"/>
+        </Method>
+        <Method name="getProfitBeforeTaxes" returnType="double" visibility="public"/>
+        <Method name="setProfitBeforeTaxes" returnType="void" visibility="public">
+          <Argument type="double" name="profitBeforeTaxes"/>
+        </Method>
+        <Method name="getTaxes" returnType="double" visibility="public"/>
+        <Method name="setTaxes" returnType="void" visibility="public">
+          <Argument type="double" name="taxes"/>
+        </Method>
+        <Method name="getExerciseUtility" returnType="double" visibility="public"/>
+        <Method name="setExerciseUtility" returnType="void" visibility="public">
+          <Argument type="double" name="exerciseUtility"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="FinancialReport" package="espe.edu.ec.verticalanalisys.hardware" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="id_company" type="String" visibility="private"/>
+        <Field name="sales" type="double" visibility="private"/>
+        <Field name="salesCost" type="double" visibility="private"/>
+        <Field name="grossProfit" type="double" visibility="private"/>
+        <Field name="expensesAdmiSales" type="double" visibility="private"/>
+        <Field name="depreciations" type="double" visibility="private"/>
+        <Field name="interestPaid" type="double" visibility="private"/>
+        <Field name="profitBeforeTaxes" type="double" visibility="private"/>
+        <Field name="taxes" type="double" visibility="private"/>
+        <Field name="exerciseUtility" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="id_company"/>
+          <Argument type="double" name="sales"/>
+          <Argument type="double" name="salesCost"/>
+          <Argument type="double" name="grossProfit"/>
+          <Argument type="double" name="expensesAdmiSales"/>
+          <Argument type="double" name="depreciations"/>
+          <Argument type="double" name="interestPaid"/>
+          <Argument type="double" name="profitBeforeTaxes"/>
+          <Argument type="double" name="taxes"/>
+          <Argument type="double" name="exerciseUtility"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId_company" returnType="String" visibility="public"/>
+        <Method name="setId_company" returnType="void" visibility="public">
+          <Argument type="String" name="id_company"/>
+        </Method>
+        <Method name="getSales" returnType="double" visibility="public"/>
+        <Method name="setSales" returnType="void" visibility="public">
+          <Argument type="double" name="sales"/>
+        </Method>
+        <Method name="getSalesCost" returnType="double" visibility="public"/>
+        <Method name="setSalesCost" returnType="void" visibility="public">
+          <Argument type="double" name="salesCost"/>
+        </Method>
+        <Method name="getGrossProfit" returnType="double" visibility="public"/>
+        <Method name="setGrossProfit" returnType="void" visibility="public">
+          <Argument type="double" name="grossProfit"/>
+        </Method>
+        <Method name="getExpensesAdmiSales" returnType="double" visibility="public"/>
+        <Method name="setExpensesAdmiSales" returnType="void" visibility="public">
+          <Argument type="double" name="expensesAdmiSales"/>
+        </Method>
+        <Method name="getDepreciations" returnType="double" visibility="public"/>
+        <Method name="setDepreciations" returnType="void" visibility="public">
+          <Argument type="double" name="depreciations"/>
+        </Method>
+        <Method name="getInterestPaid" returnType="double" visibility="public"/>
+        <Method name="setInterestPaid" returnType="void" visibility="public">
+          <Argument type="double" name="interestPaid"/>
+        </Method>
+        <Method name="getProfitBeforeTaxes" returnType="double" visibility="public"/>
+        <Method name="setProfitBeforeTaxes" returnType="void" visibility="public">
+          <Argument type="double" name="profitBeforeTaxes"/>
+        </Method>
+        <Method name="getTaxes" returnType="double" visibility="public"/>
+        <Method name="setTaxes" returnType="void" visibility="public">
+          <Argument type="double" name="taxes"/>
+        </Method>
+        <Method name="getExerciseUtility" returnType="double" visibility="public"/>
+        <Method name="setExerciseUtility" returnType="void" visibility="public">
+          <Argument type="double" name="exerciseUtility"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="User" package="espe.edu.ec.verticalanalisys.hardware" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields>
+        <Field name="id_user" type="String" visibility="private"/>
+        <Field name="name_user" type="String" visibility="private"/>
+        <Field name="pass_user" type="String" visibility="private"/>
+        <Field name="id_company" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="id_user"/>
+          <Argument type="String" name="name_user"/>
+          <Argument type="String" name="pass_user"/>
+          <Argument type="String" name="id_company"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId_user" returnType="String" visibility="public"/>
+        <Method name="setId_user" returnType="void" visibility="public">
+          <Argument type="String" name="id_user"/>
+        </Method>
+        <Method name="getName_user" returnType="String" visibility="public"/>
+        <Method name="setName_user" returnType="void" visibility="public">
+          <Argument type="String" name="name_user"/>
+        </Method>
+        <Method name="getPass_user" returnType="String" visibility="public"/>
+        <Method name="setPass_user" returnType="void" visibility="public">
+          <Argument type="String" name="pass_user"/>
+        </Method>
+        <Method name="getId_company" returnType="String" visibility="public"/>
+        <Method name="setId_company" returnType="void" visibility="public">
+          <Argument type="String" name="id_company"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>
