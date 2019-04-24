@@ -45,10 +45,15 @@ public class Users {
     @Path("{id_user}/{name_user}/{pass_user}/{id_company}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public User getJson(@PathParam("id_user") String id_user, @PathParam("name_user") String name_user, @PathParam("pass_user") String pass_user, @PathParam("id_company") String id_company) {
-        User data;
-        data=new User(id_user,name_user,pass_user,id_company);
-        return data;
+    public boolean registerData(@PathParam("id_user") String id_user, @PathParam("name_user") String name_user, @PathParam("pass_user") String pass_user, @PathParam("id_company") String id_company) throws SQLException {
+        boolean confirm;
+        DBConnect db= new DBConnect();
+        if(confirm=db.confirmConnect()){
+            db.insertUser(id_user, name_user, pass_user, id_company);  
+        }else
+            confirm=false;  
+        
+        return confirm;
     }
 
     /**
