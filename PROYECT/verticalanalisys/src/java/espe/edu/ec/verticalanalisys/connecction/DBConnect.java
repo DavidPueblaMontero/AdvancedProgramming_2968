@@ -25,13 +25,25 @@ public class DBConnect {
     public Connection connect(){
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            ct=(Connection) DriverManager.getConnection(url,user,pass);
-            System.out.print("Conexion Exitosa");
+            ct=(Connection) DriverManager.getConnection(url,user,pass);  
+            System.out.println("Successful connection");
         } catch (ClassNotFoundException|SQLException ex) {
-            System.out.print("No se conecto");
+            System.out.println("ERROR");
         }
         return ct;
     }
+    public boolean confirmConnect(){
+        boolean confirm;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            ct=(Connection) DriverManager.getConnection(url,user,pass);  
+            confirm=true;
+        } catch (ClassNotFoundException|SQLException ex) {
+            confirm=false;
+        }
+        return confirm;
+    }
+    
     public void insertUser (String id_user, String name_user, String pass_user,String id_company) throws SQLException{
         String query;
         DBConnect connect=new DBConnect();
