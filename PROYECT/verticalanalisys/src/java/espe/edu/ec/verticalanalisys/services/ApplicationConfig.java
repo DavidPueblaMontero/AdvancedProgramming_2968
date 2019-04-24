@@ -12,7 +12,7 @@ import javax.ws.rs.core.Application;
  *
  * @author jorge
  */
-@javax.ws.rs.ApplicationPath("data")
+@javax.ws.rs.ApplicationPath("financialanalisys")
 public class ApplicationConfig extends Application {
 
     @Override
@@ -31,6 +31,7 @@ public class ApplicationConfig extends Application {
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(espe.edu.ec.verticalanalisys.services.Companies.class);
         resources.add(espe.edu.ec.verticalanalisys.services.Financial.class);
+        resources.add(espe.edu.ec.verticalanalisys.services.Report.class);
         resources.add(espe.edu.ec.verticalanalisys.services.Users.class);
     }
     

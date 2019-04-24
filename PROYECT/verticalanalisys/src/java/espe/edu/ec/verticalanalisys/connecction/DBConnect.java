@@ -5,6 +5,7 @@
  */
 package espe.edu.ec.verticalanalisys.connecction;
 
+import espe.edu.ec.verticalanalisys.hardware.FinancialReport;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -96,6 +97,45 @@ public class DBConnect {
         }
     
     }
+    public FinancialReport report(String id_company,int year) throws SQLException{
+        FinancialReport finreport=null;
+        String query;
+        DBConnect connect=new DBConnect();
+        String table="financialdata";
+        query="SELECT * FROM "+table+" Where id_company= ? and year=?";
+        PreparedStatement state= connect.connect().prepareStatement(query);
+        state.setString(1,id_company);  
+        state.setInt(2,year);  
+        ResultSet rs=state.executeQuery();
+        
+        while (rs.next()){
+            double sales= 100;
+            double salesCost=(rs.getDouble("salesCost")/rs.getDouble("sales"))*100;
+            double grossProfit=(rs.getDouble("grossProfit")/rs.getDouble("sales"))*100;
+            double expensesAdmiSales=(rs.getDouble("expensesAdmiSales")/rs.getDouble("sales"))*100;
+            double depreciations=(rs.getDouble("depreciations")/rs.getDouble("sales"))*100;
+            double interestPaid=(rs.getDouble("interestPaid")/rs.getDouble("sales"))*100;
+            double profitBeforeTaxes=(rs.getDouble("profitBeforeTaxes")/rs.getDouble("sales"))*100;
+            double taxes=(rs.getDouble("taxes")/rs.getDouble("sales"))*100;
+            double excerciseUtility=(rs.getDouble("excerciseUtility")/rs.getDouble("sales"))*100;
+            finreport=new FinancialReport(id_company,sales, salesCost, grossProfit, expensesAdmiSales, depreciations, interestPaid, profitBeforeTaxes, taxes, excerciseUtility);
+            
+            
+            
+            
+            
+          
+            
+            
+        
+    }
+        rs.close();
+        state.close();
+           
+        return finreport;
+    }
+    
+    
     public static void main(String[] args){
         DBConnect c= new DBConnect();
         c.connect();

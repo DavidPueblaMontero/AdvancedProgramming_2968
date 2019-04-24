@@ -10,11 +10,7 @@ package espe.edu.ec.verticalanalisys.hardware;
  * @author jorge
  */
 public class FinancialReport {
-    private String id_finanacialData;
     private String id_company;
-    private String id_user;
-    private String name_user;
-    private int year;
     private double sales;
     private double salesCost;
     private double grossProfit;
@@ -25,12 +21,8 @@ public class FinancialReport {
     private double taxes;
     private double exerciseUtility;
 
-    public FinancialReport(String id_finanacialData, String id_company, String id_user, String name_user, int year, double sales, double salesCost, double grossProfit, double expensesAdmiSales, double depreciations, double interestPaid, double profitBeforeTaxes, double taxes, double exerciseUtility) {
-        this.id_finanacialData = id_finanacialData;
+    public FinancialReport(String id_company, double sales, double salesCost, double grossProfit, double expensesAdmiSales, double depreciations, double interestPaid, double profitBeforeTaxes, double taxes, double exerciseUtility) {
         this.id_company = id_company;
-        this.id_user = id_user;
-        this.name_user = name_user;
-        this.year = year;
         this.sales = sales;
         this.salesCost = salesCost;
         this.grossProfit = grossProfit;
@@ -42,20 +34,7 @@ public class FinancialReport {
         this.exerciseUtility = exerciseUtility;
     }
 
-    /**
-     * @return the id_finanacialData
-     */
-    public String getId_finanacialData() {
-        return id_finanacialData;
-    }
-
-    /**
-     * @param id_finanacialData the id_finanacialData to set
-     */
-    public void setId_finanacialData(String id_finanacialData) {
-        this.id_finanacialData = id_finanacialData;
-    }
-
+   
     /**
      * @return the id_company
      */
@@ -70,47 +49,7 @@ public class FinancialReport {
         this.id_company = id_company;
     }
 
-    /**
-     * @return the id_user
-     */
-    public String getId_user() {
-        return id_user;
-    }
 
-    /**
-     * @param id_user the id_user to set
-     */
-    public void setId_user(String id_user) {
-        this.id_user = id_user;
-    }
-
-    /**
-     * @return the name_user
-     */
-    public String getName_user() {
-        return name_user;
-    }
-
-    /**
-     * @param name_user the name_user to set
-     */
-    public void setName_user(String name_user) {
-        this.name_user = name_user;
-    }
-
-    /**
-     * @return the year
-     */
-    public int getYear() {
-        return year;
-    }
-
-    /**
-     * @param year the year to set
-     */
-    public void setYear(int year) {
-        this.year = year;
-    }
 
     /**
      * @return the sales
@@ -237,6 +176,7 @@ public class FinancialReport {
     public void setExerciseUtility(double exerciseUtility) {
         this.exerciseUtility = exerciseUtility;
     }
+
     
     
 }
