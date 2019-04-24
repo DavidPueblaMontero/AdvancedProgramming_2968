@@ -7,7 +7,7 @@ package espe.edu.ec.verticalanalisys.hardware;
 
 /**
  *
- * @author jorge
+ * @author jorge, jess, david
  */
 public class User {
     private String id_user;
