@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.Produces;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -26,6 +27,8 @@ import javax.ws.rs.core.MediaType;
 @Path("financial")
 public class Financial {
 
+    boolean confirm;
+    DBConnect db = new DBConnect();
     @Context
     private UriInfo context;
 
@@ -36,27 +39,44 @@ public class Financial {
     }
 
     /**
-     * Retrieves representation of an instance of espe.edu.ec.verticalanalisys.services.Financial
-     * @return an instance of espe.edu.ec.verticalanalisys.hardware.FinancialData
+     * Retrieves representation of an instance of
+     * espe.edu.ec.verticalanalisys.services.Financial
+     *
+     * @return an instance of
+     * espe.edu.ec.verticalanalisys.hardware.FinancialData
      */
     @Path("{id_financialData}/{id_company}/{year}/{sales}/{salesCost}/{grossProfit}/{expensesAdminSales}/{depreciations}/{interestPaid}/{profitBeforeTaxes}/{taxes}/{exerciseUtility}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public boolean registerDataFinancialValues(@PathParam("id_financialData") String id_financialData, @PathParam("id_company") String id_company, @PathParam("year") int year, @PathParam("sales") double sales, @PathParam("salesCost") double salesCost,
-                                         @PathParam("grossProfit") double grossProfit,@PathParam("expensesAdminSales") double expensesAdminSales,@PathParam("depreciations") double depreciations,@PathParam("interestPaid") double interestPaid,@PathParam("profitBeforeTaxes") double profitBeforeTaxes,
-                                         @PathParam("taxes") double taxes,@PathParam("exerciseUtility") double exerciseUtility) throws SQLException {
-        boolean confirm;
-        DBConnect db= new DBConnect();
-        if(confirm=db.confirmConnect()){
-            db.insertFinancialData(id_financialData, id_company, year,sales,salesCost,grossProfit,expensesAdminSales,depreciations,interestPaid,profitBeforeTaxes,taxes,exerciseUtility);
-        }else
-            confirm=false;  
-        
+            @PathParam("grossProfit") double grossProfit, @PathParam("expensesAdminSales") double expensesAdminSales, @PathParam("depreciations") double depreciations, @PathParam("interestPaid") double interestPaid, @PathParam("profitBeforeTaxes") double profitBeforeTaxes,
+            @PathParam("taxes") double taxes, @PathParam("exerciseUtility") double exerciseUtility) throws SQLException {
+
+        if (confirm = db.confirmConnect()) {
+            db.insertFinancialData(id_financialData, id_company, year, sales, salesCost, grossProfit, expensesAdminSales, depreciations, interestPaid, profitBeforeTaxes, taxes, exerciseUtility);
+        } else {
+            confirm = false;
+        }
+
+        return confirm;
+    }
+
+    @Path("{id_financialData}")
+    @DELETE
+    @Produces(MediaType.APPLICATION_JSON)
+    public boolean deleteById(@PathParam("id_financialData") String id) throws SQLException {
+        if (confirm = db.confirmConnect()) {
+            db.deleteRegister(id, "financialData", "id_financialData");
+        } else {
+            confirm = false;
+        }
+
         return confirm;
     }
 
     /**
      * PUT method for updating or creating an instance of Financial
+     *
      * @param content representation for the resource
      */
     @PUT

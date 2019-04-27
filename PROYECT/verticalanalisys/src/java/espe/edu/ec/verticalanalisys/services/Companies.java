@@ -36,7 +36,9 @@ public class Companies {
     }
 
     /**
-     * Retrieves representation of an instance of espe.edu.ec.verticalanalisys.services.Companies
+     * Retrieves representation of an instance of
+     * espe.edu.ec.verticalanalisys.services.Companies
+     *
      * @return an instance of espe.edu.ec.verticalanalisys.hardware.Company
      */
     @Path("{id_company}/{name_company}/{description_company}/{address_company}/{phone_company}")
@@ -44,17 +46,19 @@ public class Companies {
     @Produces(MediaType.APPLICATION_JSON)
     public boolean registerDataCompanies(@PathParam("id_company") String id_company, @PathParam("name_company") String name_company, @PathParam("description_company") String description_company, @PathParam("address_company") String address_company, @PathParam("phone_company") String phone_company) throws SQLException {
         boolean confirm;
-        DBConnect db= new DBConnect();
-        if(confirm=db.confirmConnect()){
+        DBConnect db = new DBConnect();
+        if (confirm = db.confirmConnect()) {
             db.insertCompany(id_company, name_company, description_company, address_company, phone_company);
-        }else
-            confirm=false;  
-        
+        } else {
+            confirm = false;
+        }
+
         return confirm;
     }
 
     /**
      * PUT method for updating or creating an instance of Companies
+     *
      * @param content representation for the resource
      */
     @PUT

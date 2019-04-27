@@ -11,6 +11,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Produces;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PUT;
@@ -25,6 +26,9 @@ import javax.ws.rs.core.MediaType;
 @Path("user")
 public class Users {
 
+    boolean confirm;
+    DBConnect db = new DBConnect();
+
     @Context
     private UriInfo context;
 
@@ -33,43 +37,56 @@ public class Users {
      */
     public Users() {
     }
-    
-    
 
     /**
-     * Retrieves representation of an instance of espe.edu.ec.verticalanalisys.services.User
+     * Retrieves representation of an instance of
+     * espe.edu.ec.verticalanalisys.services.User
+     *
      * @return an instance of espe.edu.ec.verticalanalisys.hardware.User
      */
     @Path("{id_user}/{name_user}/{pass_user}/{id_company}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public boolean registerDataUsers(@PathParam("id_user") String id_user, @PathParam("name_user") String name_user, @PathParam("pass_user") String pass_user, @PathParam("id_company") String id_company) throws SQLException {
-        boolean confirm;
-        DBConnect db= new DBConnect();
-        if(confirm=db.confirmConnect()){
-            db.insertUser(id_user, name_user, pass_user, id_company);  
-        }else
-            confirm=false;  
-        
+
+        if (confirm = db.confirmConnect()) {
+            db.insertUser(id_user, name_user, pass_user, id_company);
+        } else {
+            confirm = false;
+        }
+
+        return confirm;
+    }
+
+    @Path("{id_user}")
+    @DELETE
+    @Produces(MediaType.APPLICATION_JSON)
+    public boolean deleteById(@PathParam("id_user") String id) throws SQLException {
+
+        if (confirm = db.confirmConnect()) {
+            db.deleteRegister(id, "user", "id_user");
+            
+        } else {
+            confirm = false;
+        }
+
         return confirm;
     }
 
     /**
      * PUT method for updating or creating an instance of User
+     *
      * @param content representation for the resource
      */
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     public void putJson(espe.edu.ec.verticalanalisys.hardware.User content) {
     }
-    
+
     /**
      *
      * @param user
      * @return
      * @throws SQLException
      */
-    
-    
-
 }
