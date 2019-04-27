@@ -65,15 +65,17 @@ public class Financial {
     @DELETE
     @Produces(MediaType.APPLICATION_JSON)
     public boolean deleteById(@PathParam("id_financialData") String id) throws SQLException {
+
         if (confirm = db.confirmConnect()) {
-            db.deleteRegister(id, "financialData", "id_financialData");
+            db.deleteRegister(id, "financialdata", "id_financialData");
+            
         } else {
             confirm = false;
         }
 
         return confirm;
     }
-
+    
     /**
      * PUT method for updating or creating an instance of Financial
      *

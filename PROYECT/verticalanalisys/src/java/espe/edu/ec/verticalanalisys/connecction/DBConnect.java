@@ -65,9 +65,7 @@ public class DBConnect {
     public void deleteRegister(String id, String table, String primary) throws SQLException {
         String query;
         DBConnect connect = new DBConnect();
-        primary = "";
-        //query = "DELETE from " + table + " where " + primary + " = ?";
-        query = "DELETE from user where id_user = ? ";
+        query = "DELETE from " + table + " where " + primary + " = ?";
         try (PreparedStatement state = connect.connect().prepareStatement(query)) {
             state.setString(1, id);
             state.executeUpdate();
