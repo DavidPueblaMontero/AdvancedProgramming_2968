@@ -12,6 +12,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Produces;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PUT;
@@ -26,6 +27,8 @@ import javax.ws.rs.core.MediaType;
 @Path("companies")
 public class Companies {
 
+    boolean confirm;
+    DBConnect db = new DBConnect();
     @Context
     private UriInfo context;
 
@@ -45,10 +48,23 @@ public class Companies {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public boolean registerDataCompanies(@PathParam("id_company") String id_company, @PathParam("name_company") String name_company, @PathParam("description_company") String description_company, @PathParam("address_company") String address_company, @PathParam("phone_company") String phone_company) throws SQLException {
-        boolean confirm;
-        DBConnect db = new DBConnect();
         if (confirm = db.confirmConnect()) {
             db.insertCompany(id_company, name_company, description_company, address_company, phone_company);
+        } else {
+            confirm = false;
+        }
+
+        return confirm;
+    }
+
+    @Path("{id_company}")
+    @DELETE
+    @Produces(MediaType.APPLICATION_JSON)
+    public boolean deleteById(@PathParam("id_company") String id) throws SQLException {
+
+        if (confirm = db.confirmConnect()) {
+            db.deleteRegister(id, "company", "id_company");
+
         } else {
             confirm = false;
         }
