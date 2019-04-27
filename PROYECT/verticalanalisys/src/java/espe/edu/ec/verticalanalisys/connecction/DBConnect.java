@@ -17,6 +17,7 @@ import java.sql.SQLException;
  * @author jorge, jess, david
  */
 public class DBConnect {
+    
     Connection ct;
     String bd= "verticalanalisys";
     String url="jdbc:mysql://financialreport.ddns.net/"+bd;
