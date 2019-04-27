@@ -60,6 +60,16 @@ public class Financial {
 
         return confirm;
     }
+    
+    @Path("{id_financialData}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public FinancialData showById(@PathParam("id_financialData") String id) throws SQLException {
+
+        FinancialData financialdata;
+        financialdata = (FinancialData) db.showRegisterById(id, "financialdata", "id_financialData");
+        return financialdata;
+    }
 
     @Path("{id_financialData}")
     @DELETE
