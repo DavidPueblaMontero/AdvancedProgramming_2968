@@ -56,6 +56,16 @@ public class Companies {
 
         return confirm;
     }
+    
+    @Path("{id_company}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Company showById(@PathParam("id_company") String id) throws SQLException {
+
+        Company company;
+        company = (Company) db.showRegisterById(id, "company", "id_company");
+        return company;
+    }
 
     @Path("{id_company}")
     @DELETE
