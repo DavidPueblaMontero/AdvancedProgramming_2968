@@ -63,7 +63,7 @@ public class Companies {
     public boolean deleteById(@PathParam("id_company") String id) throws SQLException {
 
         if (confirm = db.confirmConnect()) {
-            db.deleteRegister(id, "company", "id_company");
+            db.deleteRegisterById(id, "company", "id_company");
 
         } else {
             confirm = false;

@@ -5,7 +5,7 @@
  */
 package espe.edu.ec.verticalanalisys.connecction;
 
-import espe.edu.ec.verticalanalisys.hardware.FinancialReport;
+import espe.edu.ec.verticalanalisys.hardware.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -23,6 +23,7 @@ public class DBConnect {
     String url = "jdbc:mysql://financialreport.ddns.net/" + bd;
     String user = "root";
     String pass = "11023650";
+    
 
     public Connection connect() {
         try {
@@ -48,8 +49,8 @@ public class DBConnect {
     }
 
     public void insertUser(String id_user, String name_user, String pass_user, String id_company) throws SQLException {
-        String query;
         DBConnect connect = new DBConnect();
+        String query;
         String table = "user";
         query = "INSERT INTO " + table + " (id_user,name_user,pass_user,id_company) values (?,?,?,?)";
         try (PreparedStatement state = connect.connect().prepareStatement(query)) {
@@ -59,23 +60,61 @@ public class DBConnect {
             state.setString(4, id_company);
             state.executeUpdate();
         }
-
     }
 
-    public void deleteRegister(String id, String table, String primary) throws SQLException {
-        String query;
+    public void deleteRegisterById(String id, String table, String primary) throws SQLException {
         DBConnect connect = new DBConnect();
+        String query;
         query = "DELETE from " + table + " where " + primary + " = ?";
         try (PreparedStatement state = connect.connect().prepareStatement(query)) {
             state.setString(1, id);
             state.executeUpdate();
         }
+    }
 
+    public Object showRegisterById(String id, String table, String primary) throws SQLException {
+        DBConnect connect = new DBConnect();
+        String query;
+        query = "SELECT * from " + table + " where " + primary + " = ?";
+        PreparedStatement state = connect.connect().prepareStatement(query);
+        state.setString(1, id);
+        ResultSet rs = state.executeQuery();
+        User user = null;
+        Company company = null;
+        FinancialData financialData = null;
+
+        while (rs.next()) {
+            switch (table) {
+                case "user":
+                    user = new User(rs.getString("id_user"), rs.getString("name_user"), rs.getString("pass_user"), rs.getString("id_company"));
+                    break;
+                case "company":
+                    company = new Company(rs.getString("id_company"), rs.getString("name_company"), rs.getString("description_company"), rs.getString("address_company"), rs.getString("phone_company"));
+                    break;
+                case "financialdata":
+                    financialData = new FinancialData(rs.getString("id_financialData"), rs.getString("id_company"), rs.getInt("year"), rs.getDouble("sales"), rs.getDouble("salesCost"), rs.getDouble("grossProfit"), rs.getDouble("expensesAdmiSales"), rs.getDouble("depreciations"), rs.getDouble("interestPaid"), rs.getDouble("profitBeforeTaxes"), rs.getDouble("taxes"), rs.getDouble("excerciseUtility"));
+                    break;
+                default:
+                    break;
+            }
+        }
+        rs.close();
+        state.close();
+        switch (table) {
+            case "user":
+                return user;
+            case "company":
+                return company;
+            case "financialdata":
+                return financialData;
+            default:
+                return null;
+        }
     }
 
     public void insertCompany(String id_company, String name_company, String description_company, String address_company, String phone_company) throws SQLException {
-        String query;
         DBConnect connect = new DBConnect();
+        String query;
         String table = "company";
         query = "INSERT INTO " + table + " (id_company,name_company,description_company,address_company,phone_company) values (?,?,?,?,?)";
         try (PreparedStatement state = connect.connect().prepareStatement(query)) {
@@ -86,13 +125,12 @@ public class DBConnect {
             state.setString(5, phone_company);
             state.executeUpdate();
         }
-
     }
 
     public void insertFinancialData(String id_financialData, String id_company, int year, double sales, double salesCost, double grossProfit,
             double expensesAdmiSales, double depreciations, double interestPaid, double profitBeforeTaxes, double taxes, double excerciseUtility) throws SQLException {
-        String query;
         DBConnect connect = new DBConnect();
+        String query;
         String table = "financialdata";
         query = "INSERT INTO " + table + " (id_financialData,id_company,year,sales,salesCost,grossProfit,expensesAdmiSales,depreciations,interestPaid,profitBeforeTaxes,taxes,excerciseUtility) values (?,?,?,?,?,?,?,?,?,?,?,?)";
         try (PreparedStatement state = connect.connect().prepareStatement(query)) {
@@ -110,13 +148,12 @@ public class DBConnect {
             state.setDouble(12, excerciseUtility);
             state.executeUpdate();
         }
-
     }
 
     public FinancialReport report(String id_company, int year) throws SQLException {
+        DBConnect connect = new DBConnect();
         FinancialReport finreport = null;
         String query;
-        DBConnect connect = new DBConnect();
         String table = "financialdata";
         query = "SELECT * FROM " + table + " Where id_company= ? and year=?";
         PreparedStatement state = connect.connect().prepareStatement(query);

@@ -6,6 +6,7 @@
 package espe.edu.ec.verticalanalisys.services;
 
 import espe.edu.ec.verticalanalisys.connecction.DBConnect;
+import espe.edu.ec.verticalanalisys.hardware.*;
 import java.sql.SQLException;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
@@ -59,13 +60,23 @@ public class Users {
     }
 
     @Path("{id_user}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public User showById(@PathParam("id_user") String id) throws SQLException {
+
+        User user;
+        user = (User) db.showRegisterById(id, "user", "id_user");
+        return user;
+    }
+
+    @Path("{id_user}")
     @DELETE
     @Produces(MediaType.APPLICATION_JSON)
     public boolean deleteById(@PathParam("id_user") String id) throws SQLException {
 
         if (confirm = db.confirmConnect()) {
-            db.deleteRegister(id, "user", "id_user");
-            
+            db.deleteRegisterById(id, "user", "id_user");
+
         } else {
             confirm = false;
         }

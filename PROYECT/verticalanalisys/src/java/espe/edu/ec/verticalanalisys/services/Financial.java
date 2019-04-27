@@ -67,7 +67,7 @@ public class Financial {
     public boolean deleteById(@PathParam("id_financialData") String id) throws SQLException {
 
         if (confirm = db.confirmConnect()) {
-            db.deleteRegister(id, "financialdata", "id_financialData");
+            db.deleteRegisterById(id, "financialdata", "id_financialData");
             
         } else {
             confirm = false;
