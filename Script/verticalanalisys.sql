@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2019-04-23 20:05:46
+Date: 2019-04-27 01:03:30
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -39,15 +39,15 @@ CREATE TABLE `financialdata` (
   `sales` decimal(10,0) DEFAULT NULL,
   `salesCost` decimal(10,0) DEFAULT NULL,
   `grossProfit` decimal(10,0) DEFAULT NULL,
-  `expemsesAdmiSales` decimal(10,0) DEFAULT NULL,
+  `expensesAdmiSales` decimal(10,0) DEFAULT NULL,
   `depreciations` decimal(10,0) DEFAULT NULL,
   `interestPaid` decimal(10,0) DEFAULT NULL,
   `profitBeforeTaxes` decimal(10,0) DEFAULT NULL,
   `taxes` decimal(10,0) DEFAULT NULL,
-  `excersiseUtility` decimal(10,0) DEFAULT NULL,
+  `excerciseUtility` decimal(10,0) DEFAULT NULL,
   PRIMARY KEY (`id_financialData`),
   KEY `fk_company2` (`id_company`),
-  CONSTRAINT `fk_company2` FOREIGN KEY (`id_company`) REFERENCES `company` (`id_company`)
+  CONSTRAINT `fk_company2` FOREIGN KEY (`id_company`) REFERENCES `company` (`id_company`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
@@ -61,5 +61,5 @@ CREATE TABLE `user` (
   `id_company` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id_user`),
   KEY `fk_company` (`id_company`),
-  CONSTRAINT `fk_company` FOREIGN KEY (`id_company`) REFERENCES `company` (`id_company`)
+  CONSTRAINT `fk_company` FOREIGN KEY (`id_company`) REFERENCES `company` (`id_company`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
