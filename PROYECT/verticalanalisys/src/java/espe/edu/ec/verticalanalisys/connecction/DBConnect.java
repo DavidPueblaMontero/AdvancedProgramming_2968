@@ -77,7 +77,22 @@ public class DBConnect {
 
                 break;
             case "financialdata":
-
+                FinancialData financial = (FinancialData) obj;
+                query = "INSERT INTO " + table + " (id_financialData,id_company,year,sales,salesCost,grossProfit,expensesAdmiSales,depreciations,interestPaid,profitBeforeTaxes,taxes,excerciseUtility) values (?,?,?,?,?,?,?,?,?,?,?,?)";
+                state = connect.connect().prepareStatement(query);
+                state.setString(1, financial.getId_finanacialData());
+                state.setString(2, financial.getId_company());
+                state.setInt(3, financial.getYear());
+                state.setDouble(4, financial.getSales());
+                state.setDouble(5, financial.getSalesCost());
+                state.setDouble(6, financial.getGrossProfit());
+                state.setDouble(7, financial.getExpensesAdmiSales());
+                state.setDouble(8, financial.getDepreciations());
+                state.setDouble(9, financial.getInterestPaid());
+                state.setDouble(10, financial.getProfitBeforeTaxes());
+                state.setDouble(11, financial.getTaxes());
+                state.setDouble(12, financial.getExerciseUtility());
+                state.executeUpdate();
                 break;
             default:
                 break;
@@ -132,29 +147,6 @@ public class DBConnect {
                 return financialData;
             default:
                 return null;
-        }
-    }
-
-    public void insertFinancialData(String id_financialData, String id_company, int year, double sales, double salesCost, double grossProfit,
-            double expensesAdmiSales, double depreciations, double interestPaid, double profitBeforeTaxes, double taxes, double excerciseUtility) throws SQLException {
-        DBConnect connect = new DBConnect();
-        String query;
-        String table = "financialdata";
-        query = "INSERT INTO " + table + " (id_financialData,id_company,year,sales,salesCost,grossProfit,expensesAdmiSales,depreciations,interestPaid,profitBeforeTaxes,taxes,excerciseUtility) values (?,?,?,?,?,?,?,?,?,?,?,?)";
-        try (PreparedStatement state = connect.connect().prepareStatement(query)) {
-            state.setString(1, id_financialData);
-            state.setString(2, id_company);
-            state.setInt(3, year);
-            state.setDouble(4, sales);
-            state.setDouble(5, salesCost);
-            state.setDouble(6, grossProfit);
-            state.setDouble(7, expensesAdmiSales);
-            state.setDouble(8, depreciations);
-            state.setDouble(9, interestPaid);
-            state.setDouble(10, profitBeforeTaxes);
-            state.setDouble(11, taxes);
-            state.setDouble(12, excerciseUtility);
-            state.executeUpdate();
         }
     }
 
