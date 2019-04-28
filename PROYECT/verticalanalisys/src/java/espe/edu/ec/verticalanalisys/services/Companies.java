@@ -7,7 +7,6 @@ package espe.edu.ec.verticalanalisys.services;
 
 import espe.edu.ec.verticalanalisys.connecction.DBConnect;
 import espe.edu.ec.verticalanalisys.hardware.Company;
-import espe.edu.ec.verticalanalisys.hardware.User;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.ws.rs.core.Context;
@@ -98,8 +97,17 @@ public class Companies {
      *
      * @param content representation for the resource
      */
+    @Path("{id_company}")
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
-    public void putJson(Company content) {
+    public boolean modifyById(Company objCompany,@PathParam("id_company") String id) throws SQLException{
+        if (confirm = db.confirmConnect()) {
+            db.modifyRegisterById(objCompany,"company", id);
+        } else {
+            confirm = false;
+        }
+
+        return confirm;
+        
     }
 }

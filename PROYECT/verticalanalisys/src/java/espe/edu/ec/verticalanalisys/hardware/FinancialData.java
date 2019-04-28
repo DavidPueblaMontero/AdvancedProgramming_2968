@@ -23,6 +23,9 @@ public class FinancialData {
     private double taxes;
     private double exerciseUtility;
 
+    public FinancialData() {
+    }
+
     public FinancialData(String id_finanacialData, String id_company, int year, double sales, double salesCost, double grossProfit, double expensesAdmiSales, double depreciations, double interestPaid, double profitBeforeTaxes, double taxes, double exerciseUtility) {
         this.id_finanacialData = id_finanacialData;
         this.id_company = id_company;

@@ -6,7 +6,6 @@
 package espe.edu.ec.verticalanalisys.services;
 
 import espe.edu.ec.verticalanalisys.connecction.DBConnect;
-import espe.edu.ec.verticalanalisys.hardware.Company;
 import espe.edu.ec.verticalanalisys.hardware.FinancialData;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -99,8 +98,17 @@ public class Financial {
      *
      * @param content representation for the resource
      */
+    @Path("{id_financialData}")
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
-    public void putJson(FinancialData content) {
+    public boolean modifyById(FinancialData objFinancialData,@PathParam("id_financialData") String id) throws SQLException{
+        if (confirm = db.confirmConnect()) {
+            db.modifyRegisterById(objFinancialData,"financialdata", id);
+        } else {
+            confirm = false;
+        }
+
+        return confirm;
+        
     }
 }

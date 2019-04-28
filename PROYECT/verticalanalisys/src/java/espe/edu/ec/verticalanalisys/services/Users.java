@@ -94,9 +94,19 @@ public class Users {
      *
      * @param content representation for the resource
      */
+    
+    @Path("{id_user}")
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
-    public void putJson(espe.edu.ec.verticalanalisys.hardware.User content) {
+    public boolean modifyById(User objUser,@PathParam("id_user") String id) throws SQLException{
+        if (confirm = db.confirmConnect()) {
+            db.modifyRegisterById(objUser,"user", id);
+        } else {
+            confirm = false;
+        }
+
+        return confirm;
+        
     }
 
     /**

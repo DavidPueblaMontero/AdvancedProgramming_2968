@@ -110,6 +110,59 @@ public class DBConnect {
             state.executeUpdate();
         }
     }
+    
+    public void modifyRegisterById(Object obj,String table,String id) throws SQLException{
+        DBConnect connect = new DBConnect();
+        String query;
+        PreparedStatement state;
+        switch (table) {
+            case "user":
+                User user = (User) obj;
+                query = "UPDATE " + table + " SET name_user=?,pass_user=?,id_company=? where id_user=?";
+                state = connect.connect().prepareStatement(query);
+                state.setString(1, user.getName_user());
+                state.setString(2, user.getPass_user());
+                state.setString(3, user.getId_company());
+                state.setString(4, id);
+                state.executeUpdate();
+
+                break;
+            case "company":
+                Company company = (Company) obj;
+                query = "UPDATE " + table + " SET name_company=?,description_company=?,address_company=?,phone_company=? where id_company=?";
+                state = connect.connect().prepareStatement(query);
+                state.setString(1, company.getName_company());
+                state.setString(2, company.getDescription_company());
+                state.setString(3, company.getAddress_company());
+                state.setString(4, company.getPhone_company());
+                state.setString(5, id);
+                state.executeUpdate();
+
+                break;
+            case "financialdata":
+                FinancialData financial = (FinancialData) obj;
+                query = "UPDATE " + table + " SET id_company=?,year=?,sales=?,salesCost=?,grossProfit=?,expensesAdmiSales=?,depreciations=?,interestPaid=?,profitBeforeTaxes=?,taxes=?,excerciseUtility=? where id_financialData=?";
+                state = connect.connect().prepareStatement(query);
+                state.setString(1, financial.getId_company());
+                state.setInt(2, financial.getYear());
+                state.setDouble(3, financial.getSales());
+                state.setDouble(4, financial.getSalesCost());
+                state.setDouble(5, financial.getGrossProfit());
+                state.setDouble(6, financial.getExpensesAdmiSales());
+                state.setDouble(7, financial.getDepreciations());
+                state.setDouble(8, financial.getInterestPaid());
+                state.setDouble(9, financial.getProfitBeforeTaxes());
+                state.setDouble(10, financial.getTaxes());
+                state.setDouble(11, financial.getExerciseUtility());
+                state.setString(12, id);
+                state.executeUpdate();
+                break;
+            default:
+                break;
+        }
+
+        
+    }
 
     public Object showRegisterById(String id, String table, String primary) throws SQLException {
         DBConnect connect = new DBConnect();
