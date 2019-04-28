@@ -51,11 +51,12 @@ public class DBConnect {
     public void insertRegister(Object obj, String table) throws SQLException {
         DBConnect connect = new DBConnect();
         String query;
+        PreparedStatement state;
         switch (table) {
             case "user":
                 User user = (User) obj;
                 query = "INSERT INTO " + table + " (id_user,name_user,pass_user,id_company) values (?,?,?,?)";
-                PreparedStatement state = connect.connect().prepareStatement(query);
+                state = connect.connect().prepareStatement(query);
                 state.setString(1, user.getId_user());
                 state.setString(2, user.getName_user());
                 state.setString(3, user.getPass_user());
@@ -64,10 +65,19 @@ public class DBConnect {
 
                 break;
             case "company":
+                Company company = (Company) obj;
+                query = "INSERT INTO " + table + " (id_company,name_company,description_company,address_company,phone_company) values (?,?,?,?,?)";
+                state = connect.connect().prepareStatement(query);
+                state.setString(1, company.getId_company());
+                state.setString(2, company.getName_company());
+                state.setString(3, company.getDescription_company());
+                state.setString(4, company.getAddress_company());
+                state.setString(5, company.getPhone_company());
+                state.executeUpdate();
 
                 break;
             case "financialdata":
-                
+
                 break;
             default:
                 break;
@@ -122,21 +132,6 @@ public class DBConnect {
                 return financialData;
             default:
                 return null;
-        }
-    }
-
-    public void insertCompany(String id_company, String name_company, String description_company, String address_company, String phone_company) throws SQLException {
-        DBConnect connect = new DBConnect();
-        String query;
-        String table = "company";
-        query = "INSERT INTO " + table + " (id_company,name_company,description_company,address_company,phone_company) values (?,?,?,?,?)";
-        try (PreparedStatement state = connect.connect().prepareStatement(query)) {
-            state.setString(1, id_company);
-            state.setString(2, name_company);
-            state.setString(3, description_company);
-            state.setString(4, address_company);
-            state.setString(5, phone_company);
-            state.executeUpdate();
         }
     }
 

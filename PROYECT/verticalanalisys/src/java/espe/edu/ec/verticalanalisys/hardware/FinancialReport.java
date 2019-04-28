@@ -21,6 +21,11 @@ public class FinancialReport {
     private double taxes;
     private double exerciseUtility;
 
+    public FinancialReport() {
+    }
+    
+    
+
     public FinancialReport(String id_company, double sales, double salesCost, double grossProfit, double expensesAdmiSales, double depreciations, double interestPaid, double profitBeforeTaxes, double taxes, double exerciseUtility) {
         this.id_company = id_company;
         this.sales = sales;

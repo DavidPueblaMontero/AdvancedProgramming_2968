@@ -16,6 +16,11 @@ public class Company {
     private String address_company;
     private String phone_company;
 
+    public Company() {
+    }
+    
+    
+
     public Company(String id_company, String name_company, String description_company, String address_company, String phone_company) {
         this.id_company = id_company;
         this.name_company = name_company;
