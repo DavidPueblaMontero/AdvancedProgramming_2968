@@ -7,7 +7,9 @@ package espe.edu.ec.verticalanalisys.services;
 
 import espe.edu.ec.verticalanalisys.connecction.DBConnect;
 import espe.edu.ec.verticalanalisys.hardware.Company;
+import espe.edu.ec.verticalanalisys.hardware.User;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Produces;
@@ -64,6 +66,15 @@ public class Companies {
 
         Company company;
         company = (Company) db.showRegisterById(id, "company", "id_company");
+        return company;
+    }
+    
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public ArrayList showCompaniesList() throws SQLException {
+
+        ArrayList <Company> company;
+        company=db.showRegisterList("company");
         return company;
     }
 

@@ -11,7 +11,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
+import java.util.ArrayList;
+
 
 /**
  *
@@ -150,6 +151,50 @@ public class DBConnect {
         }
     }
 
+    public ArrayList showRegisterList(String table) throws SQLException {
+        DBConnect connect = new DBConnect();
+        String query;
+        query = "SELECT * from " + table;
+        PreparedStatement state = connect.connect().prepareStatement(query);
+        ResultSet rs = state.executeQuery();
+        User temporaryUser;
+        Company temporaryCompany;
+        FinancialData temporaryFinancialData;
+        ArrayList <User> user= new ArrayList();
+        ArrayList <Company> company = new ArrayList();
+        ArrayList <FinancialData> financialData = new ArrayList();
+
+        while (rs.next()) {
+            switch (table) {
+                case "user":
+                    temporaryUser = new User(rs.getString("id_user"), rs.getString("name_user"), rs.getString("pass_user"), rs.getString("id_company"));
+                    user.add(temporaryUser);
+                    break;
+                case "company":
+                    temporaryCompany = new Company(rs.getString("id_company"), rs.getString("name_company"), rs.getString("description_company"), rs.getString("address_company"), rs.getString("phone_company"));
+                    company.add(temporaryCompany);
+                    break;
+                case "financialdata":
+                    temporaryFinancialData = new FinancialData(rs.getString("id_financialData"), rs.getString("id_company"), rs.getInt("year"), rs.getDouble("sales"), rs.getDouble("salesCost"), rs.getDouble("grossProfit"), rs.getDouble("expensesAdmiSales"), rs.getDouble("depreciations"), rs.getDouble("interestPaid"), rs.getDouble("profitBeforeTaxes"), rs.getDouble("taxes"), rs.getDouble("excerciseUtility"));
+                    financialData.add(temporaryFinancialData);
+                    break;
+                default:
+                    break;
+            }
+        }
+        rs.close();
+        state.close();
+        switch (table) {
+            case "user":
+                return user;
+            case "company":
+                return company;
+            case "financialdata":
+                return financialData;
+            default:
+                return null;
+        }
+    }
     public FinancialReport report(String id_company, int year) throws SQLException {
         DBConnect connect = new DBConnect();
         FinancialReport finreport = null;
@@ -180,9 +225,10 @@ public class DBConnect {
         return finreport;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         DBConnect c = new DBConnect();
         c.connect();
+        
     }
 
 }

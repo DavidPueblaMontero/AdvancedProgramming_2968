@@ -8,6 +8,7 @@ package espe.edu.ec.verticalanalisys.services;
 import espe.edu.ec.verticalanalisys.connecction.DBConnect;
 import espe.edu.ec.verticalanalisys.hardware.*;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.ws.rs.Produces;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -49,6 +50,17 @@ public class Users {
         User user = (User) db.showRegisterById(id, "user", "id_user");
         return user;
     }
+    
+   
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public ArrayList showUserList() throws SQLException {
+
+        ArrayList <User> user;
+        user=db.showRegisterList("user");
+        return user;
+    }
+
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)

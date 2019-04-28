@@ -6,8 +6,10 @@
 package espe.edu.ec.verticalanalisys.services;
 
 import espe.edu.ec.verticalanalisys.connecction.DBConnect;
+import espe.edu.ec.verticalanalisys.hardware.Company;
 import espe.edu.ec.verticalanalisys.hardware.FinancialData;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Consumes;
@@ -66,6 +68,15 @@ public class Financial {
         FinancialData financialdata;
         financialdata = (FinancialData) db.showRegisterById(id, "financialdata", "id_financialData");
         return financialdata;
+    }
+    
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public ArrayList showFinancialDataList() throws SQLException {
+
+        ArrayList <FinancialData> financial;
+        financial=db.showRegisterList("financialdata");
+        return financial;
     }
 
     @Path("{id_financialData}")
