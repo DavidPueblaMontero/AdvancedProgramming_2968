@@ -8,12 +8,11 @@ package espe.edu.ec.verticalanalisys.services;
 import espe.edu.ec.verticalanalisys.connecction.DBConnect;
 import espe.edu.ec.verticalanalisys.hardware.*;
 import java.sql.SQLException;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Produces;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PUT;
 import javax.ws.rs.PathParam;
@@ -30,9 +29,6 @@ public class Users {
     boolean confirm;
     DBConnect db = new DBConnect();
 
-    @Context
-    private UriInfo context;
-
     /**
      * Creates a new instance of User
      */
@@ -45,28 +41,25 @@ public class Users {
      *
      * @return an instance of espe.edu.ec.verticalanalisys.hardware.User
      */
-    @Path("{id_user}/{name_user}/{pass_user}/{id_company}")
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public boolean registerDataUsers(@PathParam("id_user") String id_user, @PathParam("name_user") String name_user, @PathParam("pass_user") String pass_user, @PathParam("id_company") String id_company) throws SQLException {
-
-        if (confirm = db.confirmConnect()) {
-            db.insertUser(id_user, name_user, pass_user, id_company);
-        } else {
-            confirm = false;
-        }
-
-        return confirm;
-    }
-
     @Path("{id_user}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public User showById(@PathParam("id_user") String id) throws SQLException {
 
-        User user;
-        user = (User) db.showRegisterById(id, "user", "id_user");
+        User user = (User) db.showRegisterById(id, "user", "id_user");
         return user;
+    }
+
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    public boolean registerUsers(User objUser) throws SQLException {
+        if (confirm = db.confirmConnect()) {
+            db.insertRegister(objUser, "user");
+        } else {
+            confirm = false;
+        }
+
+        return confirm;
     }
 
     @Path("{id_user}")

@@ -11,6 +11,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  *
@@ -23,7 +24,6 @@ public class DBConnect {
     String url = "jdbc:mysql://financialreport.ddns.net/" + bd;
     String user = "root";
     String pass = "11023650";
-    
 
     public Connection connect() {
         try {
@@ -48,18 +48,31 @@ public class DBConnect {
         return confirm;
     }
 
-    public void insertUser(String id_user, String name_user, String pass_user, String id_company) throws SQLException {
+    public void insertRegister(Object obj, String table) throws SQLException {
         DBConnect connect = new DBConnect();
         String query;
-        String table = "user";
-        query = "INSERT INTO " + table + " (id_user,name_user,pass_user,id_company) values (?,?,?,?)";
-        try (PreparedStatement state = connect.connect().prepareStatement(query)) {
-            state.setString(1, id_user);
-            state.setString(2, name_user);
-            state.setString(3, pass_user);
-            state.setString(4, id_company);
-            state.executeUpdate();
+        switch (table) {
+            case "user":
+                User user = (User) obj;
+                query = "INSERT INTO " + table + " (id_user,name_user,pass_user,id_company) values (?,?,?,?)";
+                PreparedStatement state = connect.connect().prepareStatement(query);
+                state.setString(1, user.getId_user());
+                state.setString(2, user.getName_user());
+                state.setString(3, user.getPass_user());
+                state.setString(4, user.getId_company());
+                state.executeUpdate();
+
+                break;
+            case "company":
+
+                break;
+            case "financialdata":
+                
+                break;
+            default:
+                break;
         }
+
     }
 
     public void deleteRegisterById(String id, String table, String primary) throws SQLException {

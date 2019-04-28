@@ -10,17 +10,11 @@ package espe.edu.ec.verticalanalisys.hardware;
  * @author jorge, jess, david
  */
 public class User {
+
     private String id_user;
     private String name_user;
     private String pass_user;
     private String id_company;
-
-    public User(String id_user, String name_user, String pass_user, String id_company) {
-        this.id_user = id_user;
-        this.name_user = name_user;
-        this.pass_user = pass_user;
-        this.id_company = id_company;
-    }
 
     /**
      * @return the id_user
@@ -77,7 +71,15 @@ public class User {
     public void setId_company(String id_company) {
         this.id_company = id_company;
     }
-    
-    
-    
+
+    public User(String id_user, String name_user, String pass_user, String id_company) {
+        this.id_user = id_user;
+        this.name_user = name_user;
+        this.pass_user = pass_user;
+        this.id_company = id_company;
+    }
+
+    public User() {
+
+    }
 }
