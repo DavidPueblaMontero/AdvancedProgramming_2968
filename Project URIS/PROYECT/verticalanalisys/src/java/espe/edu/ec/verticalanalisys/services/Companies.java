@@ -46,7 +46,6 @@ public class Companies {
      *
      * @return an instance of espe.edu.ec.verticalanalisys.hardware.Company
      */
-    
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public boolean registerCompanies(Company objCompany) throws SQLException {
@@ -57,7 +56,7 @@ public class Companies {
         }
         return confirm;
     }
-    
+
     @Path("{id_company}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -67,13 +66,13 @@ public class Companies {
         company = (Company) db.showRegisterById(id, "company", "id_company");
         return company;
     }
-    
+
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public ArrayList showCompaniesList() throws SQLException {
 
-        ArrayList <Company> company;
-        company=db.showRegisterList("company");
+        ArrayList<Company> company;
+        company = db.showRegisterList("company");
         return company;
     }
 
@@ -100,14 +99,12 @@ public class Companies {
     @Path("{id_company}")
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
-    public boolean modifyById(Company objCompany,@PathParam("id_company") String id) throws SQLException{
+    public boolean modifyById(Company objCompany, @PathParam("id_company") String id) throws SQLException {
         if (confirm = db.confirmConnect()) {
-            db.modifyRegisterById(objCompany,"company", id);
+            db.modifyRegisterById(objCompany, "company", id);
         } else {
             confirm = false;
         }
-
         return confirm;
-        
     }
 }

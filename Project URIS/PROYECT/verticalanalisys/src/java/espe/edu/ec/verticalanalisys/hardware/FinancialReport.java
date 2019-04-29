@@ -10,6 +10,7 @@ package espe.edu.ec.verticalanalisys.hardware;
  * @author jorge, jess, david
  */
 public class FinancialReport {
+
     private String id_company;
     private double sales;
     private double salesCost;
@@ -23,8 +24,6 @@ public class FinancialReport {
 
     public FinancialReport() {
     }
-    
-    
 
     public FinancialReport(String id_company, double sales, double salesCost, double grossProfit, double expensesAdmiSales, double depreciations, double interestPaid, double profitBeforeTaxes, double taxes, double exerciseUtility) {
         this.id_company = id_company;
@@ -39,7 +38,6 @@ public class FinancialReport {
         this.exerciseUtility = exerciseUtility;
     }
 
-   
     /**
      * @return the id_company
      */
@@ -53,8 +51,6 @@ public class FinancialReport {
     public void setId_company(String id_company) {
         this.id_company = id_company;
     }
-
-
 
     /**
      * @return the sales
@@ -182,6 +178,4 @@ public class FinancialReport {
         this.exerciseUtility = exerciseUtility;
     }
 
-    
-    
 }
