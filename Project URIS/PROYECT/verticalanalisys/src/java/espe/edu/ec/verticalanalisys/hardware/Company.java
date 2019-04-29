@@ -10,6 +10,7 @@ package espe.edu.ec.verticalanalisys.hardware;
  * @author jorge, jess, david
  */
 public class Company {
+
     private String id_company;
     private String name_company;
     private String description_company;
@@ -18,8 +19,6 @@ public class Company {
 
     public Company() {
     }
-    
-    
 
     public Company(String id_company, String name_company, String description_company, String address_company, String phone_company) {
         this.id_company = id_company;
@@ -98,7 +97,5 @@ public class Company {
     public void setPhone_company(String phone_company) {
         this.phone_company = phone_company;
     }
-    
-    
-    
+
 }

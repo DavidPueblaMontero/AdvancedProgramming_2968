@@ -13,7 +13,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-
 /**
  *
  * @author jorge, jess, david
@@ -98,7 +97,6 @@ public class DBConnect {
             default:
                 break;
         }
-
     }
 
     public void deleteRegisterById(String id, String table, String primary) throws SQLException {
@@ -110,8 +108,8 @@ public class DBConnect {
             state.executeUpdate();
         }
     }
-    
-    public void modifyRegisterById(Object obj,String table,String id) throws SQLException{
+
+    public void modifyRegisterById(Object obj, String table, String id) throws SQLException {
         DBConnect connect = new DBConnect();
         String query;
         PreparedStatement state;
@@ -160,8 +158,6 @@ public class DBConnect {
             default:
                 break;
         }
-
-        
     }
 
     public Object showRegisterById(String id, String table, String primary) throws SQLException {
@@ -213,9 +209,9 @@ public class DBConnect {
         User temporaryUser;
         Company temporaryCompany;
         FinancialData temporaryFinancialData;
-        ArrayList <User> user= new ArrayList();
-        ArrayList <Company> company = new ArrayList();
-        ArrayList <FinancialData> financialData = new ArrayList();
+        ArrayList<User> user = new ArrayList();
+        ArrayList<Company> company = new ArrayList();
+        ArrayList<FinancialData> financialData = new ArrayList();
 
         while (rs.next()) {
             switch (table) {
@@ -248,6 +244,7 @@ public class DBConnect {
                 return null;
         }
     }
+
     public FinancialReport report(String id_company, int year) throws SQLException {
         DBConnect connect = new DBConnect();
         FinancialReport finreport = null;
@@ -281,7 +278,6 @@ public class DBConnect {
     public static void main(String[] args) throws SQLException {
         DBConnect c = new DBConnect();
         c.connect();
-        
     }
 
 }

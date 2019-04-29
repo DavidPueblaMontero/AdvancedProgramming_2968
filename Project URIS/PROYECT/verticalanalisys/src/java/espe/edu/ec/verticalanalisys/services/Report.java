@@ -10,11 +10,9 @@ import espe.edu.ec.verticalanalisys.hardware.FinancialReport;
 import java.sql.SQLException;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
-import javax.ws.rs.Consumes;
 import javax.ws.rs.Produces;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-import javax.ws.rs.PUT;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
 
@@ -36,18 +34,20 @@ public class Report {
     }
 
     /**
-     * Retrieves representation of an instance of espe.edu.ec.verticalanalisys.services.Report
-     * @return an instance of espe.edu.ec.verticalanalisys.hardware.FinancialReport
+     * Retrieves representation of an instance of
+     * espe.edu.ec.verticalanalisys.services.Report
+     *
+     * @return an instance of
+     * espe.edu.ec.verticalanalisys.hardware.FinancialReport
      */
     @Path("{id_company}/{year}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public FinancialReport returnValues(@PathParam("id_company") String id_company, @PathParam("year") int year) throws SQLException {
         FinancialReport finreport;
-        DBConnect db=new DBConnect();
-        finreport=db.report(id_company, year);
+        DBConnect db = new DBConnect();
+        finreport = db.report(id_company, year);
         return finreport;
-        
-        
+
     }
 }

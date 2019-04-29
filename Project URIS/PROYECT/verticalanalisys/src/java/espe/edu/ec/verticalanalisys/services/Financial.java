@@ -44,8 +44,10 @@ public class Financial {
      * Retrieves representation of an instance of
      * espe.edu.ec.verticalanalisys.services.Financial
      *
+     * @param objfinancial
      * @return an instance of
      * espe.edu.ec.verticalanalisys.hardware.FinancialData
+     * @throws java.sql.SQLException
      */
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
@@ -68,13 +70,13 @@ public class Financial {
         financialdata = (FinancialData) db.showRegisterById(id, "financialdata", "id_financialData");
         return financialdata;
     }
-    
+
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public ArrayList showFinancialDataList() throws SQLException {
 
-        ArrayList <FinancialData> financial;
-        financial=db.showRegisterList("financialdata");
+        ArrayList<FinancialData> financial;
+        financial = db.showRegisterList("financialdata");
         return financial;
     }
 
@@ -89,7 +91,6 @@ public class Financial {
         } else {
             confirm = false;
         }
-
         return confirm;
     }
 
@@ -101,14 +102,12 @@ public class Financial {
     @Path("{id_financialData}")
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
-    public boolean modifyById(FinancialData objFinancialData,@PathParam("id_financialData") String id) throws SQLException{
+    public boolean modifyById(FinancialData objFinancialData, @PathParam("id_financialData") String id) throws SQLException {
         if (confirm = db.confirmConnect()) {
-            db.modifyRegisterById(objFinancialData,"financialdata", id);
+            db.modifyRegisterById(objFinancialData, "financialdata", id);
         } else {
             confirm = false;
         }
-
         return confirm;
-        
     }
 }
