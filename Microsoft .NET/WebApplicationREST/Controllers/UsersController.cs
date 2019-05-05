@@ -69,12 +69,19 @@ namespace WebApplicationREST.Controllers
         }
 
         // POST users/
-        public bool Post([FromBody]Users value)
+        public bool Post([FromBody]Users userInfo)
         {
-            Users user = new Users();
 
+            MySqlConnection conn = WebApiConfig.conn();
+            conn.Open();
 
-            return true;
+            MySqlCommand insertCommand = new MySqlCommand(String.Format("INSERT into users (id_user, name_user, age_user, phone_user, address_user) values ('{0}','{1}','{2}','{3}','{4}')", userInfo.id_user, userInfo.name_user, userInfo.age_user, userInfo.phone_user, userInfo.address_user), conn);
+            int execute = insertCommand.ExecuteNonQuery();
+            if (execute == 1)
+            {
+                return true;
+            }
+            return false;
         }
 
         // PUT users/{id_user}
