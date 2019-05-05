@@ -39,7 +39,7 @@ namespace WebApplicationREST.Controllers
             return users;
         }
 
-        // GET users/{id}
+        // GET users/{id_user}
         public Users Get(int id)
         {
             MySqlConnection conn = WebApiConfig.conn();
@@ -77,12 +77,12 @@ namespace WebApplicationREST.Controllers
             return true;
         }
 
-        // PUT api/values/5
+        // PUT users/{id_user}
         public void Put(int id, [FromBody]string value)
         {
         }
 
-        // DELETE api/values/5
+        // DELETE users/{id_user}
         public void Delete(int id)
         {
         }
