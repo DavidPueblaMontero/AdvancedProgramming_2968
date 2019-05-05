@@ -10,7 +10,7 @@ namespace WebApplicationREST
     {
         public static MySqlConnection conn()
         {
-            string conn_string = "server=localhost;port=3306;database=restnet;username=root;password=11023650";
+            string conn_string = "server=usersnet.ddns.net;port=3306;database=restnet;username=root;password=11023650";
             MySqlConnection conn = new MySqlConnection(conn_string);
             return conn;
         }

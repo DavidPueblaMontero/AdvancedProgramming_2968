@@ -11,7 +11,7 @@ namespace WebApplicationREST.Controllers
 {
     public class UsersController : ApiController
     {
-        // GET users/values
+        // GET users/
         public List<Users> Get()
         {
             MySqlConnection conn = WebApiConfig.conn();
@@ -39,7 +39,7 @@ namespace WebApplicationREST.Controllers
             return users;
         }
 
-        // GET api/values/5
+        // GET users/{id}
         public Users Get(int id)
         {
             MySqlConnection conn = WebApiConfig.conn();
@@ -68,9 +68,13 @@ namespace WebApplicationREST.Controllers
             return users;
         }
 
-        // POST api/values
-        public void Post([FromBody]dynamic value)
+        // POST users/
+        public bool Post([FromBody]Users value)
         {
+            Users user = new Users();
+
+
+            return true;
         }
 
         // PUT api/values/5
