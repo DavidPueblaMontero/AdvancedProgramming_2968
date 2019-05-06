@@ -87,33 +87,33 @@ namespace WebApplicationREST.Controllers
         // PUT users/{id_user}
         public bool Put([FromBody]Users userInfo, int id)
         {
-			MySqlConnection conn = WebApiConfig.conn();
-			conn.Open();
+            MySqlConnection conn = WebApiConfig.conn();
+            conn.Open();
 
-			MySqlCommand insertCommand = new MySqlCommand(String.Format("UPDATE users SET name_user='"+userInfo.name_user+"',age_user='"+userInfo.age_user+"',phone_user='"+userInfo.phone_user+"',address_user='"+userInfo.address_user+"' WHERE id_user="+id), conn);
-			int execute = insertCommand.ExecuteNonQuery();
-			if (execute == 1)
-			{
-				return true;
-			}
-			return false;
+            MySqlCommand insertCommand = new MySqlCommand(String.Format("UPDATE users SET name_user='" + userInfo.name_user + "',age_user='" + userInfo.age_user + "',phone_user='" + userInfo.phone_user + "',address_user='" + userInfo.address_user + "' WHERE id_user=" + id), conn);
+            int execute = insertCommand.ExecuteNonQuery();
+            if (execute == 1)
+            {
+                return true;
+            }
+            return false;
 
-		}
+        }
 
         // DELETE users/{id_user}
         public bool Delete(int id)
         {
-			MySqlConnection conn = WebApiConfig.conn();
-			conn.Open();
+            MySqlConnection conn = WebApiConfig.conn();
+            conn.Open();
 
-			MySqlCommand deleteCommand = new MySqlCommand(String.Format("DELETE FROM users where id_user='" + id + "'"), conn);
-			int execute = deleteCommand.ExecuteNonQuery();
-			if (execute == 1)
-			{
-				return true;
-			}
-			return false;
+            MySqlCommand deleteCommand = new MySqlCommand(String.Format("DELETE FROM users where id_user='" + id + "'"), conn);
+            int execute = deleteCommand.ExecuteNonQuery();
+            if (execute == 1)
+            {
+                return true;
+            }
+            return false;
 
-		}
+        }
     }
 }
