@@ -23,7 +23,7 @@ namespace WebApplicationREST
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "{controller}/{id}",
+                routeTemplate: "WebApplicationrest/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
         }
