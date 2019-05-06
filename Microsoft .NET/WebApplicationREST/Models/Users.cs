@@ -7,7 +7,7 @@ namespace WebApplicationREST.Models
 {
     public class Users
     {
-        public string id_user { get; set; }
+        public int id_user { get; set; }
         public string name_user { get; set; }
         public string age_user { get; set; }
         public string phone_user { get; set; }
@@ -17,7 +17,7 @@ namespace WebApplicationREST.Models
         {
 
         }
-        public Users(string id_user, string name_user, string age_user, string phone_user, string address_user, string error)
+        public Users(int id_user, string name_user, string age_user, string phone_user, string address_user, string error)
         {
             this.id_user = id_user;
             this.name_user = name_user;
