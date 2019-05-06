@@ -85,13 +85,36 @@ namespace WebApplicationREST.Controllers
         }
 
         // PUT users/{id_user}
-        public void Put(int id, [FromBody]string value)
+        public bool Put([FromBody]Users userInfo, int id)
         {
-        }
+			MySqlConnection conn = WebApiConfig.conn();
+			conn.Open();
+
+			MySqlCommand insertCommand = new MySqlCommand(String.Format("UPDATE users SET name_user='"+userInfo.name_user+"',age_user='"+userInfo.age_user+"',phone_user='"+userInfo.phone_user+"',address_user='"+userInfo.address_user+"' WHERE id_user="+id), conn);
+			int execute = insertCommand.ExecuteNonQuery();
+			if (execute == 1)
+			{
+				return true;
+			}
+			return false;
+
+		}
 
         // DELETE users/{id_user}
-        public void Delete(int id)
+        public bool Delete(int id)
         {
-        }
+			MySqlConnection conn = WebApiConfig.conn();
+
+			MySqlCommand query = conn.CreateCommand();
+			query.CommandText = "DELETE from users where id_user = @id";
+			query.Parameters.AddWithValue("@id", id);
+			int execute = query.ExecuteNonQuery();
+			if (execute == 1)
+			{
+				return true;
+			}
+			return false;
+
+		}
     }
 }
