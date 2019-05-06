@@ -21,19 +21,16 @@ namespace WebApplicationREST.Controllers
 
             var users = new List<Users>();
 
-            try
-            {
+            try{
                 conn.Open();
             }
-            catch (MySql.Data.MySqlClient.MySqlException ex)
-            {
+            catch (MySql.Data.MySqlClient.MySqlException ex){
                 users.Add(new Users(null, null, null, null, null, ex.ToString()));
             }
 
             MySqlDataReader fetch_query = query.ExecuteReader();
 
-            while (fetch_query.Read())
-            {
+            while (fetch_query.Read()){
                 users.Add(new Users(fetch_query["id_user"].ToString(), fetch_query["name_user"].ToString(), fetch_query["age_user"].ToString(), fetch_query["phone_user"].ToString(), fetch_query["address_user"].ToString(), null));
             }
             return users;
@@ -50,19 +47,16 @@ namespace WebApplicationREST.Controllers
 
             var users = new Users();
 
-            try
-            {
+            try{
                 conn.Open();
             }
-            catch (MySql.Data.MySqlClient.MySqlException ex)
-            {
+            catch (MySql.Data.MySqlClient.MySqlException ex){
                 users = new Users(null, null, null, null, null, ex.ToString());
             }
 
             MySqlDataReader fetch_query = query.ExecuteReader();
 
-            while (fetch_query.Read())
-            {
+            while (fetch_query.Read()){
                 users = new Users(fetch_query["id_user"].ToString(), fetch_query["name_user"].ToString(), fetch_query["age_user"].ToString(), fetch_query["phone_user"].ToString(), fetch_query["address_user"].ToString(), null);
             }
             return users;
@@ -74,11 +68,9 @@ namespace WebApplicationREST.Controllers
 
             MySqlConnection conn = WebApiConfig.conn();
             conn.Open();
-
             MySqlCommand insertCommand = new MySqlCommand(String.Format("INSERT into users (id_user, name_user, age_user, phone_user, address_user) values ('{0}','{1}','{2}','{3}','{4}')", userInfo.id_user, userInfo.name_user, userInfo.age_user, userInfo.phone_user, userInfo.address_user), conn);
             int execute = insertCommand.ExecuteNonQuery();
-            if (execute == 1)
-            {
+            if (execute == 1){
                 return true;
             }
             return false;
@@ -91,8 +83,7 @@ namespace WebApplicationREST.Controllers
 			conn.Open();
 			MySqlCommand insertCommand = new MySqlCommand(String.Format("UPDATE users SET name_user='"+userInfo.name_user+"',age_user='"+userInfo.age_user+"',phone_user='"+userInfo.phone_user+"',address_user='"+userInfo.address_user+"' WHERE id_user="+id), conn);
 			int execute = insertCommand.ExecuteNonQuery();
-			if (execute == 1)
-			{
+			if (execute == 1){
 				return true;
 			}
 			return false;
@@ -104,10 +95,9 @@ namespace WebApplicationREST.Controllers
         {
 			MySqlConnection conn = WebApiConfig.conn();
 			conn.Open();
-			MySqlCommand deleteCommand = new MySqlCommand(String.Format("DELETE FROM users where id_user='" + id + "'"), conn);
+			MySqlCommand deleteCommand = new MySqlCommand(String.Format("DELETE FROM users WHERE id_user='" + id + "'"), conn);
 			int execute = deleteCommand.ExecuteNonQuery();
-			if (execute == 1)
-			{
+			if (execute == 1){
 				return true;
 			}
 			return false;
