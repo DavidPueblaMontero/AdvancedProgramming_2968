@@ -12,7 +12,7 @@ namespace WebApplicationREST.Controllers
     public class UsersController : ApiController
     {
         // GET users/
-        public List<Users> Get()
+        public List<Users> GET()
         {
             MySqlConnection conn = WebApiConfig.conn();
 
@@ -40,7 +40,7 @@ namespace WebApplicationREST.Controllers
         }
 
         // GET users/{id_user}
-        public Users Get(int id)
+        public Users GET(int id)
         {
             MySqlConnection conn = WebApiConfig.conn();
 
@@ -69,7 +69,7 @@ namespace WebApplicationREST.Controllers
         }
 
         // POST users/
-        public bool Post([FromBody]Users userInfo)
+        public bool POST([FromBody]Users userInfo)
         {
 
             MySqlConnection conn = WebApiConfig.conn();
@@ -85,11 +85,10 @@ namespace WebApplicationREST.Controllers
         }
 
         // PUT users/{id_user}
-        public bool Put([FromBody]Users userInfo, int id)
+        public bool PUT([FromBody]Users userInfo, int id)
         {
 			MySqlConnection conn = WebApiConfig.conn();
 			conn.Open();
-
 			MySqlCommand insertCommand = new MySqlCommand(String.Format("UPDATE users SET name_user='"+userInfo.name_user+"',age_user='"+userInfo.age_user+"',phone_user='"+userInfo.phone_user+"',address_user='"+userInfo.address_user+"' WHERE id_user="+id), conn);
 			int execute = insertCommand.ExecuteNonQuery();
 			if (execute == 1)
@@ -101,11 +100,10 @@ namespace WebApplicationREST.Controllers
 		}
 
         // DELETE users/{id_user}
-        public bool Delete(int id)
+        public bool DELETE(int id)
         {
 			MySqlConnection conn = WebApiConfig.conn();
 			conn.Open();
-
 			MySqlCommand deleteCommand = new MySqlCommand(String.Format("DELETE FROM users where id_user='" + id + "'"), conn);
 			int execute = deleteCommand.ExecuteNonQuery();
 			if (execute == 1)
