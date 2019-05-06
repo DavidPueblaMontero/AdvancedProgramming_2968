@@ -104,11 +104,10 @@ namespace WebApplicationREST.Controllers
         public bool Delete(int id)
         {
 			MySqlConnection conn = WebApiConfig.conn();
+			conn.Open();
 
-			MySqlCommand query = conn.CreateCommand();
-			query.CommandText = "DELETE from users where id_user = @id";
-			query.Parameters.AddWithValue("@id", id);
-			int execute = query.ExecuteNonQuery();
+			MySqlCommand deleteCommand = new MySqlCommand(String.Format("DELETE FROM users where id_user='" + id + "'"), conn);
+			int execute = deleteCommand.ExecuteNonQuery();
 			if (execute == 1)
 			{
 				return true;
