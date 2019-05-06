@@ -10,7 +10,7 @@ namespace WebApplicationREST.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
+            ViewBag.Title = "RESTful .NET";
 
             return View();
         }
