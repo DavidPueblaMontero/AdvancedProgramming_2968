@@ -50,15 +50,17 @@ public class Users {
         User user = (User) db.showRegisterById(id, "user", "id_user");
         return user;
     }
-
+    
+   
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public ArrayList showUserList() throws SQLException {
 
-        ArrayList<User> user;
-        user = db.showRegisterList("user");
+        ArrayList <User> user;
+        user=db.showRegisterList("user");
         return user;
     }
+
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
@@ -83,6 +85,7 @@ public class Users {
         } else {
             confirm = false;
         }
+
         return confirm;
     }
 
@@ -91,15 +94,25 @@ public class Users {
      *
      * @param content representation for the resource
      */
+    
     @Path("{id_user}")
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
-    public boolean modifyById(User objUser, @PathParam("id_user") String id) throws SQLException {
+    public boolean modifyById(User objUser,@PathParam("id_user") String id) throws SQLException{
         if (confirm = db.confirmConnect()) {
-            db.modifyRegisterById(objUser, "user", id);
+            db.modifyRegisterById(objUser,"user", id);
         } else {
             confirm = false;
         }
+
         return confirm;
+        
     }
+
+    /**
+     *
+     * @param user
+     * @return
+     * @throws SQLException
+     */
 }

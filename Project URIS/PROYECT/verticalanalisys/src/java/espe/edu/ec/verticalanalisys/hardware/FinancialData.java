@@ -10,7 +10,6 @@ package espe.edu.ec.verticalanalisys.hardware;
  * @author jorge, jess, david
  */
 public class FinancialData {
-
     private String id_finanacialData;
     private String id_company;
     private int year;
@@ -209,5 +208,7 @@ public class FinancialData {
     public void setExerciseUtility(double exerciseUtility) {
         this.exerciseUtility = exerciseUtility;
     }
-
+    
+    
+    
 }
