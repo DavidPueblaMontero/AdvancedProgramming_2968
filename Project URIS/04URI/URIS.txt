@@ -18,3 +18,5 @@ http://financialreport.ddns.net/verticalanalisys/financialanalisys/user
 
 PUT
 http://financialreport.ddns.net/verticalanalisys/financialanalisys/companies/{id_company}
+http://financialreport.ddns.net/verticalanalisys/financialanalisys/financial/{id_financialData}
+http://financialreport.ddns.net/verticalanalisys/financialanalisys/user/{id_user}
