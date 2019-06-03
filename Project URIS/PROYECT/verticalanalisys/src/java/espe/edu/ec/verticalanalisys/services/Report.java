@@ -23,7 +23,7 @@ import javax.ws.rs.core.MediaType;
  *
  * @author jorge, jess, david
  */
-@Path("report")
+@Path("companiesfinancialreport")
 public class Report {
 
     @Context
