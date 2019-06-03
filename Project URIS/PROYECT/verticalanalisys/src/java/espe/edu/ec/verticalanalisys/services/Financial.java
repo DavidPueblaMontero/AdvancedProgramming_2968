@@ -26,7 +26,7 @@ import javax.ws.rs.core.MediaType;
  *
  * @author david, jess, david
  */
-@Path("financial")
+@Path("companiesfinancialdata")
 public class Financial {
 
     boolean confirm;
