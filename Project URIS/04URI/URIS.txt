@@ -1,22 +1,22 @@
 DELETE
 http://financialreport.ddns.net/verticalanalisys/v1/companies/{id_company}
-http://financialreport.ddns.net/verticalanalisys/v1/financial/{id_financialData}
+http://financialreport.ddns.net/verticalanalisys/v1/companiesfinancialdata/{id_financialData}
 http://financialreport.ddns.net/verticalanalisys/v1/users/{id_user}
 
 
 GET
 http://financialreport.ddns.net/verticalanalisys/v1/companies/{id_company}
-http://financialreport.ddns.net/verticalanalisys/v1/financial/{id_financialData}
+http://financialreport.ddns.net/verticalanalisys/v1/companiesfinancialdata/{id_financialData}
 http://financialreport.ddns.net/verticalanalisys/v1/users/{id_user}
 http://financialreport.ddns.net/verticalanalisys/v1/report/{id_company}/{year}
 
 POST
 
 http://financialreport.ddns.net/verticalanalisys/v1/companies
-http://financialreport.ddns.net/verticalanalisys/v1/financial
+http://financialreport.ddns.net/verticalanalisys/v1/companiesfinancialdata
 http://financialreport.ddns.net/verticalanalisys/v1/users
 
 PUT
 http://financialreport.ddns.net/verticalanalisys/v1/companies/{id_company}
-http://financialreport.ddns.net/verticalanalisys/v1/financial/{id_financialData}
+http://financialreport.ddns.net/verticalanalisys/v1/companiesfinancialdata/{id_financialData}
 http://financialreport.ddns.net/verticalanalisys/v1/users/{id_user}
