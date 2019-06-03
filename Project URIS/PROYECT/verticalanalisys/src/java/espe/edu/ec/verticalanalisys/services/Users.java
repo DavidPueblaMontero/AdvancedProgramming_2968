@@ -24,7 +24,7 @@ import javax.ws.rs.core.MediaType;
  *
  * @author jorge, jess, david
  */
-@Path("user")
+@Path("users")
 public class Users {
 
     boolean confirm;
