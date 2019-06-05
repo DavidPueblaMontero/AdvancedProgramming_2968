@@ -8,22 +8,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset=utf-8" />
 </head>
-<body body class="blurBg-false" style="background-color:#EBEBEB">
+
+<body body class="blurBg-false" style="background-color:#EBEBEB" >
+<form method="post" action="getCompany.php">
   <div align="center">                        
     <p>SEARCH COMPANY:</p>
     <p>Companies:
-      <select>
+      <select name="id_company">
         <option value="0">NameCompany:</option>
         <?php
           $query = $mysqli -> query ("SELECT * FROM company");
           while ($valores = mysqli_fetch_array($query)) {
-            echo '<option value="'.$valores[id].'">'.$valores[name_company].'</option>';
+            echo '<option value="'.$valores[id_company].'">'.$valores[name_company].'</option>';            
           }
-        ?>
-      </select>
-      <button>Submit</button>
+          
+                    
+        ?>        
+      </select>      
     </p>
   </div>
+  <input type="submit" value="Submit">
+  </form> 
 </body>
  
 </html>
