@@ -18,12 +18,12 @@ $data = json_decode(file_get_contents($uri), true);
         <tr>
             <td>ID User</td>
             <td>Name User</td>
-            <td>Type User</td>
+            <td>ID Company</td>
         </tr>
         <tr>
             <td><?php echo ("<p>{$data['id_user']}</p>");?></td>
             <td><?php echo ("<p>{$data['name_user']}</p>");?></td>
-            <td><?php echo ("<p>{$data['name_user']}</p>");?></td>
+            <td><?php echo ("<p>{$data['id_company']}</p>");?></td>
         </tr>
     </table>
 </body>
