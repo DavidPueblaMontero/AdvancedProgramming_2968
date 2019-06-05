@@ -1,5 +1,4 @@
 <?php
-
 $id_finanacialData=$_POST['id_finanacialData'];
 $uri ="http://financialreport.ddns.net/verticalanalisys/data/companiesfinancialdata/$id_finanacialData";
 $financial_json = file_get_contents($uri);
@@ -15,7 +14,7 @@ $financial_array = json_decode($financial_json, true);
 </head>
 
 <body>
-    <h3 align="center">Financial with id: <?php echo $id?></h3>
+    <h3 align="center">Financial with id: <?php echo $id_finanacialData?></h3>
     <table class="egt" border="1px" align="center">
         <tr>
             <td>id_finanacialData</td>
@@ -44,8 +43,8 @@ $financial_array = json_decode($financial_json, true);
           <td ><?php echo ("<p>{$financial_array ['interestPaid']}</p>");?></td>
           <td ><?php echo ("<p>{$financial_array ['profitBeforeTaxes']}</p>");?></td>
           <td ><?php echo ("<p>{$financial_array ['taxes']}</p>");?></td>
-          <td ><?php echo ("<p>{$financial_array ['quexerciseUtilityantity']}</p>");?></td>
-            
+          <td ><?php echo ("<p>{$financial_array ['exerciseUtility']}</p>");?></td>
+        
         </tr>
     </table>
 </body>

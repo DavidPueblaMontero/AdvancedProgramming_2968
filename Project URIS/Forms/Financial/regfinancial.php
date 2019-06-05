@@ -14,7 +14,7 @@ $profitBeforeTaxes=$_POST['profitBeforeTaxes'];
 $taxes=$_POST['taxes'];
 $exerciseUtility=$_POST['exerciseUtility'];
 
-$data =array('id_finanacialData' => $id_finanacialData, 'id_company' => $select, 'year'=> $year, 'sales' => $sales, 
+$data =array('id_finanacialData' => $id_finanacialData, 'id_company' => $select , 'year'=> $year, 'sales' => $sales, 
 'salesCost' => $salesCost, 'grossProfit' => $grossProfit, 'expensesAdmiSales' => $expensesAdmiSales, 
 'depreciations' => $depreciations, 'interestPaid' => $interestPaid, 'profitBeforeTaxes' => $profitBeforeTaxes, 'taxes' => $taxes,
 'exerciseUtility' => $exerciseUtility);    

@@ -1,5 +1,5 @@
 <?php
-include 'conexion_sql_server.php';
+
 $uri = "http://financialreport.ddns.net/verticalanalisys/data/companiesfinancialdata";
 $financial_json = file_get_contents($uri);
 $financial_array = json_decode($financial_json, true);
@@ -17,6 +17,7 @@ $financial_array = json_decode($financial_json, true);
     <h3 align="center">All Financial</h3>
     <table class="egt" border="1px" align="center">
         <tr>
+            <td>id_finanacialData</td>  
             <td>id_company</td>  
             <td>year</td>  
             <td>sales</td>  
@@ -42,7 +43,7 @@ $financial_array = json_decode($financial_json, true);
                 echo ("<td><p>{$financial['interestPaid']}</p></td>");
                 echo ("<td><p>{$financial['profitBeforeTaxes']}</p></td>");
                 echo ("<td><p>{$financial['taxes']}</p></td>");
-                echo ("<td><p>{$financial['quexerciseUtilityantity']}</p></td></tr>");
+                echo ("<td><p>{$financial['exerciseUtility']}</p></td></tr>");
         
             }
             ?>
