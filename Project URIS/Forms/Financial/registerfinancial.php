@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="registerfinancial_files/formoid1/formoid-solid-green.css" type="text/css" />
 <script type="text/javascript" src="registerfinancial_files/formoid1/jquery.min.js"></script>
 <form action="regfinancial.php" class="formoid-solid-green" style="background-color:#cbffc2;font-size:14px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#34495E;max-width:480px;min-width:150px" method="post"><div class="title"><h2>Register Data financial </h2></div>
-	<div class="element-number" title="Id"><label class="title"><span class="required">*</span></label><div class="item-cont"><input class="large" type="text" min="0" max="99999999" name="number11" required="required" placeholder="Id" value=""/><span class="icon-place"></span></div></div>
+	<div class="element-number" title="Id"><label class="title"><span class="required">*</span></label><div class="item-cont"><input class="large" type="text" min="0" max="99999999" name="id_finanacialData" required="required" placeholder="Id" value=""/><span class="icon-place"></span></div></div>
 	<div class="element-select"><label class="title"></label><div class="item-cont"><div class="large"><span><select name="select" >
 	<option value="-1">Select Company</option>
 	<?php
