@@ -1,6 +1,6 @@
 <?php
 
-    $url= "http://localhost:1024/verticalanalisys/data/companies";
+    $url= "http://financialreport.ddns.net/verticalanalisys/data/companies";
     $companyName = $_POST['input'];
     $companyDescription = $_POST['input1'];
     $companyAddress = $_POST['input2'];

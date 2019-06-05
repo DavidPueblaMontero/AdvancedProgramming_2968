@@ -1,28 +1,27 @@
-<html>
-    <body>
-    <form >
-        <?php
-       
-            $id_company = $_POST['id_company'];
-            $company_uri ="http://localhost:1024/verticalanalisys/data/companies/$id_company";            
-            $company_json = file_get_contents($company_uri);
-            $company_array = json_decode($company_json, true);
-        
-            $name_company=$company_array["name_company"];            
-            $description_company=$company_array["description_company"];            
-            $address_company=$company_array["address_company"];            
-            $phone_company=$company_array["phone_company"];     
+<?php
+    $companyId=$_POST['id_company'];
+    $url= "http://financialreport.ddns.net/verticalanalisys/data/companies/$companyId";
+    $companyName = $_POST['name_company'];
+    $companyDescription = $_POST['description_company'];
+    $companyAddress = $_POST['address_company'];
+    $companyPhone = $_POST['phone_company'];
 
-        
-         ?>
-    
-        Company Name: <input type="text" name="name_company" value="<?php echo $name_company ?>"><br>
-        Company Description: <input type="text" name="description_company" value="<?php echo $description_company ?>"><br>
-        Company Address: <input type="text" name="address_company" value="<?php echo $address_company ?>"><br>
-        Company Phone: <input type="text" name="phone_company" value="<?php echo $phone_company ?>"><br>
-        <input type="submit" value="Submit">
-</form>    
+    $data = array( 'id_company' => $companyId, 'name_company' => $companyName, 'description_company' => $companyDescription, 'address_company' => $companyAddress, 'phone_company' => $companyPhone);
+    $cli=curl_init($url);
+    curl_setopt($cli,CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+    curl_setopt ($cli, CURLOPT_CUSTOMREQUEST, 'PUT');
+    curl_setopt ($cli, CURLOPT_POSTFIELDS, json_encode($data));
+    curl_setopt($cli,CURLOPT_RETURNTRANSFER,true);
+    $response=curl_exec($cli);
+    if($response)
+        echo "UPDATE COMPANY";
+    else
+        echo "Error";
+    curl_close($cli);
 
-</body>
 
-</html>
+
+
+    echo "<BR><BR>";
+    echo "<center><a href='MenuCompany.html'>Volver a la carga de datos</a></center>"
+?>

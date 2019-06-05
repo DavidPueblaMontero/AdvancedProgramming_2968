@@ -1,20 +1,40 @@
 <?php
        
         $id_company = $_POST['id_company'];
-        $company_uri ="http://localhost:1024/verticalanalisys/data/companies/$id_company";
-        
-        $company_json = file_get_contents($company_uri);
-        $company_array = json_decode($company_json, true);
-       
-        var_export($company_array["name_company"]);
-        echo "<br> " ;
-        var_export($company_array["description_company"]);
-        echo "<br> " ;
-        var_export($company_array["address_company"]);
-        echo "<br> " ;
-        var_export($company_array["phone_company"]);
-        echo "<br> " ;
- ?>
+        $uri = "http://financialreport.ddns.net/verticalanalisys/data/companies/$id_company";
+        $data = json_decode(file_get_contents($uri), true);
+?>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User</title>
+</head>
+
+<body>
+    <h3 align="center">Company with id: <?php echo $id_company?></h3>
+    <table class="egt" border="1px" align="center">
+        <tr>
+            <td>ID Company</td>
+            <td>Name Company</td>
+            <td>Description Company</td>
+            <td>Address Company</td>
+            <td>Phone Company</td>
+        </tr>
+        <tr>
+            <td><?php echo ("<p>{$data['id_company']}</p>");?></td>
+            <td><?php echo ("<p>{$data['name_company']}</p>");?></td>
+            <td><?php echo ("<p>{$data['description_company']}</p>");?></td>
+            <td><?php echo ("<p>{$data['address_company']}</p>");?></td>
+            <td><?php echo ("<p>{$data['phone_company']}</p>");?></td>
+        </tr>
+    </table>
+</body>
+
+</html>
+
         
 
         

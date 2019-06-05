@@ -10,7 +10,7 @@
 </head>
 
 <body body class="blurBg-false" style="background-color:#EBEBEB" >
-<form method="post" action="putCompany.php">
+<form method="post" action="dataPutCompany.php">
   <div align="center">                        
     <p>SEARCH COMPANY:</p>
     <p>Companies:
