@@ -10,11 +10,11 @@ $financial_array = json_decode($financial_json, true);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>User</title>
+    <title>Financial</title>
 </head>
 
 <body>
-    <h3 align="center">All Users</h3>
+    <h3 align="center">All Financial</h3>
     <table class="egt" border="1px" align="center">
         <tr>
             <td>id_company</td>  

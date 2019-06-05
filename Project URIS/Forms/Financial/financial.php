@@ -18,6 +18,7 @@ $financial_array = json_decode($financial_json, true);
     <h3 align="center">Financial with id: <?php echo $id?></h3>
     <table class="egt" border="1px" align="center">
         <tr>
+            <td>id_finanacialData</td>
             <td>id_company</td>  
             <td>year</td>  
             <td>sales</td>  
@@ -32,7 +33,7 @@ $financial_array = json_decode($financial_json, true);
             
         </tr>
         <tr>
-        <td ><?php echo ("<p>{$financial_array ['id_finanacialData']}</p>");?></td>
+         <td ><?php echo ("<p>{$financial_array ['id_finanacialData']}</p>");?></td>
           <td ><?php echo ("<p>{$financial_array ['id_company']}</p>");?></td>
           <td ><?php echo ("<p>{$financial_array ['year']}</p>");?></td>
           <td ><?php echo ("<p>{$financial_array ['sales']}</p>");?></td>
