@@ -1,5 +1,4 @@
 <?php
-//include 'conexion_sql_server.php';
   $mysqli = new mysqli('localhost', 'root', '11023650', 'verticalanalisys');
   $id = $_POST['id'];
 ?>
@@ -15,7 +14,7 @@
 <?php
        
             $id_company = $_POST['id_company'];
-            $company_uri ="http://financialreport.ddns.net/verticalanalisys/data/users/$id";            
+            $company_uri ="http://financialreport.ddns.net:1024/verticalanalisys/data/users/$id";            
             $company_json = file_get_contents($company_uri);
             $company_array = json_decode($company_json, true);
         

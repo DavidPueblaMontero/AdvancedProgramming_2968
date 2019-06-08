@@ -1,5 +1,5 @@
 <?php
-$uri = "http://financialreport.ddns.net/verticalanalisys/data/users";
+$uri = "http://financialreport.ddns.net:1024/verticalanalisys/data/users";
 $id=$_POST['id'];
 $name=$_POST['name'];
 $pass=$_POST['password'];

@@ -1,6 +1,6 @@
 <?php
 $id = $_POST['id'];
-$uri = "http://financialreport.ddns.net/verticalanalisys/data/users/$id";
+$uri = "http://financialreport.ddns.net:1024/verticalanalisys/data/users/$id";
 
 
 //$data = array('name_user' => $name, 'pass_user' => $pass, 'id_company' => $select);

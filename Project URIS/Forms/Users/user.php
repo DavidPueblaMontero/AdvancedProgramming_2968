@@ -1,6 +1,6 @@
 <?php
 $id = $_POST['id'];
-$uri = "http://financialreport.ddns.net/verticalanalisys/data/users/$id";
+$uri = "http://financialreport.ddns.net:1024/verticalanalisys/data/users/$id";
 $data = json_decode(file_get_contents($uri), true);
 ?>
 <html lang="en">

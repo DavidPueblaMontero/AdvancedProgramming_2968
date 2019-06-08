@@ -1,5 +1,4 @@
 <?php
-//include 'conexion_sql_server.php';
   $mysqli = new mysqli('localhost', 'root', '11023650', 'verticalanalisys');
 ?>
 <!DOCTYPE html>
