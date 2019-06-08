@@ -1,22 +1,22 @@
 DELETE
-http://financialreport.ddns.net/verticalanalisys/data/companies/{id_company}
-http://financialreport.ddns.net/verticalanalisys/data/companiesfinancialdata/{id_financialData}
-http://financialreport.ddns.net/verticalanalisys/data/users/{id_user}
+http://financialreport.ddns.net:1024/verticalanalisys/data/companies/{id_company}
+http://financialreport.ddns.net:1024/verticalanalisys/data/companiesfinancialdata/{id_financialData}
+http://financialreport.ddns.net:1024/verticalanalisys/data/users/{id_user}
 
 
 GET
-http://financialreport.ddns.net/verticalanalisys/data/companies/{id_company}
-http://financialreport.ddns.net/verticalanalisys/data/companiesfinancialdata/{id_financialData}
-http://financialreport.ddns.net/verticalanalisys/data/users/{id_user}
-http://financialreport.ddns.net/verticalanalisys/data/companiesfinancialreport/{id_company}/{year}
+http://financialreport.ddns.net:1024/verticalanalisys/data/companies/{id_company}
+http://financialreport.ddns.net:1024/verticalanalisys/data/companiesfinancialdata/{id_financialData}
+http://financialreport.ddns.net:1024/verticalanalisys/data/users/{id_user}
+http://financialreport.ddns.net:1024/verticalanalisys/data/companiesfinancialreport/{id_company}/{year}
 
 POST
 
-http://financialreport.ddns.net/verticalanalisys/data/companies
-http://financialreport.ddns.net/verticalanalisys/data/companiesfinancialdata
-http://financialreport.ddns.net/verticalanalisys/data/users
+http://financialreport.ddns.net:1024/verticalanalisys/data/companies
+http://financialreport.ddns.net:1024/verticalanalisys/data/companiesfinancialdata
+http://financialreport.ddns.net:1024/verticalanalisys/data/users
 
 PUT
-http://financialreport.ddns.net/verticalanalisys/data/companies/{id_company}
-http://financialreport.ddns.net/verticalanalisys/data/companiesfinancialdata/{id_financialData}
-http://financialreport.ddns.net/verticalanalisys/data/users/{id_user}
+http://financialreport.ddns.net:1024/verticalanalisys/data/companies/{id_company}
+http://financialreport.ddns.net:1024/verticalanalisys/data/companiesfinancialdata/{id_financialData}
+http://financialreport.ddns.net:1024/verticalanalisys/data/users/{id_user}
