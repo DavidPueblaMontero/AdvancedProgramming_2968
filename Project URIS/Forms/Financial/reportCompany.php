@@ -77,7 +77,7 @@ $data = json_decode(file_get_contents($uri), true);
     echo "EXERCISE UTILITY.<br>";
     echo "For every dollar that the company invoiced in {$year} it obtained approximately {$exerciseUtility} cents of profit available to shareholders.<br><br>";
     echo "<BR><BR>";
-    echo "<center><a href='MenuCompany.html'>RETURN MENU</a></center>";
+    echo "<center><a href='menufinancial.html'>RETURN MENU</a></center>";
 ?>
 
 </html>
