@@ -28,6 +28,6 @@ $select=$_POST['select'];
     <title>Requister User</title>
 </head>
 <body>
-    Enviado con exito!!
+    <?php echo"<script type=\"text/javascript\">alert('Register Successful!'); window.location='http://$rutaServer';</script>";?>
 </body>
 </html>

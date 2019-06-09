@@ -35,7 +35,7 @@ curl_close($ch);
 </head>
 
 <body>
-    Updated Successfull!!
+<?php echo "<script type=\"text/javascript\">alert('Update Successful!'); window.location='http://$rutaServer';</script>";?>
 </body>
 
 </html>

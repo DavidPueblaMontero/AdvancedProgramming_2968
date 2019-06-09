@@ -3,9 +3,15 @@ $rutaServer = $_SERVER['DOCUMENT_ROOT'];
 include $rutaServer.'/check.php'; ?>
 
 <?php
+
 $id = $_POST['id'];
 $uri = "http://financialreport.ddns.net:1024/verticalanalisys/data/users/$id";
 $data = json_decode(file_get_contents($uri), true);
+
+
+if(!isset($data['id_user'])){
+    echo"<script type=\"text/javascript\">alert('Incorrect ID!'); window.location='http://$rutaServer';</script>"; 
+}
 ?>
 <html lang="en">
 

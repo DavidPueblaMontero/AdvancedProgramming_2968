@@ -4,11 +4,20 @@ include $rutaServer.'/check.php'; ?>
 
 <?php
 $id = $_POST['id'];
+$company_uri = "http://financialreport.ddns.net:1024/verticalanalisys/data/users/$id";
+$company_json = file_get_contents($company_uri);
+$company_array = json_decode($company_json, true);
+
+if (!isset($company_array['id_user'])) {
+  echo "<script type=\"text/javascript\">alert('Incorrect ID!'); window.location='http://$rutaServer';</script>";
+}
+
+?>
+
+
+<?php
+
 $uri = "http://financialreport.ddns.net:1024/verticalanalisys/data/users/$id";
-
-
-//$data = array('name_user' => $name, 'pass_user' => $pass, 'id_company' => $select);
-//$data_json = json_encode($data);
 
 $ch = curl_init($uri);
 curl_setopt($ch, CURLOPT_URL, $uri);
@@ -29,7 +38,7 @@ curl_close($ch);
 </head>
 
 <body>
-    Updated Successfull!!
+    <?php echo "<script type=\"text/javascript\">alert('Delete Successful'); window.location='http://$rutaServer';</script>";?>
 </body>
 
 </html>

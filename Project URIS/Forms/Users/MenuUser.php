@@ -24,7 +24,7 @@ include $rutaServer.'/check.php'; ?>
 <!-- Start Formoid form-->
 <link rel="stylesheet" href="menuuser_files/formoid1/formoid-solid-blue.css" type="text/css" />
 <script type="text/javascript" src="menuuser_files/formoid1/jquery.min.js"></script>
-<form action="searchUser.html" class="formoid-solid-blue" style="background-color:#FFFFFF;font-size:14px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#34495E;max-width:480px;min-width:150px" method="post"><div class="title"><h2>Search User</h2></div>
+<form action="searchUser.php" class="formoid-solid-blue" style="background-color:#FFFFFF;font-size:14px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#34495E;max-width:480px;min-width:150px" method="post"><div class="title"><h2>Search User</h2></div>
 <div class="submit" ><input type="submit" value="Submit"/></div></form><p class="frmd"><a href="http://google.com">javascript form</a> Formoid.com 2.9</p><script type="text/javascript" src="menuuser_files/formoid1/formoid-solid-blue.js"></script>
 <!-- Stop Formoid form-->
 <br>
@@ -32,7 +32,7 @@ include $rutaServer.'/check.php'; ?>
 <!-- Start Formoid form-->
 <link rel="stylesheet" href="menuuser_files/formoid1/formoid-solid-blue.css" type="text/css" />
 <script type="text/javascript" src="menuuser_files/formoid1/jquery.min.js"></script>
-<form action="updateUser.html" class="formoid-solid-blue" style="background-color:#FFFFFF;font-size:14px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#34495E;max-width:480px;min-width:150px" method="post"><div class="title"><h2>Update User</h2></div>
+<form action="updateUser.php" class="formoid-solid-blue" style="background-color:#FFFFFF;font-size:14px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#34495E;max-width:480px;min-width:150px" method="post"><div class="title"><h2>Update User</h2></div>
 <div class="submit" ><input type="submit" value="Submit"/></div></form><p class="frmd"><a href="http://google.com">javascript form</a> Formoid.com 2.9</p><script type="text/javascript" src="menuuser_files/formoid1/formoid-solid-blue.js"></script>
 <!-- Stop Formoid form-->
 <br>
@@ -40,7 +40,7 @@ include $rutaServer.'/check.php'; ?>
 <!-- Start Formoid form-->
 <link rel="stylesheet" href="menuuser_files/formoid1/formoid-solid-blue.css" type="text/css" />
 <script type="text/javascript" src="menuuser_files/formoid1/jquery.min.js"></script>
-<form action="deleteUser.html" class="formoid-solid-blue" style="background-color:#FFFFFF;font-size:14px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#34495E;max-width:480px;min-width:150px" method="post"><div class="title"><h2>Delete User</h2></div>
+<form action="deleteUser.php" class="formoid-solid-blue" style="background-color:#FFFFFF;font-size:14px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#34495E;max-width:480px;min-width:150px" method="post"><div class="title"><h2>Delete User</h2></div>
 <div class="submit" ><input type="submit" value="Submit"/></div></form><p class="frmd"><a href="http://google.com">javascript form</a> Formoid.com 2.9</p><script type="text/javascript" src="menuuser_files/formoid1/formoid-solid-blue.js"></script>
 <!-- Stop Formoid form-->
 
