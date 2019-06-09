@@ -1,7 +1,7 @@
 <?php
        
         $id_company = $_POST['id_company'];
-        $uri = "http://financialreport.ddns.net/verticalanalisys/data/companies/$id_company";
+        $uri = "http://financialreport.ddns.net:1024/verticalanalisys/data/companies/$id_company";
         $data = json_decode(file_get_contents($uri), true);
 ?>
 <html lang="en">
@@ -32,7 +32,10 @@
         </tr>
     </table>
 </body>
-
+<?php
+    echo "<BR><BR>";
+    echo "<center><a href='MenuCompany.html'>RETURN MENU</a></center>"
+?>
 </html>
 
         

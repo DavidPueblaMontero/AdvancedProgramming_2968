@@ -1,6 +1,6 @@
 <?php
     $companyId=$_POST['id_company'];
-    $url= "http://financialreport.ddns.net/verticalanalisys/data/companies/$companyId";
+    $url= "http://financialreport.ddns.net:1024/verticalanalisys/data/companies/$companyId";
     $companyName = $_POST['name_company'];
     $companyDescription = $_POST['description_company'];
     $companyAddress = $_POST['address_company'];
@@ -23,5 +23,5 @@
 
 
     echo "<BR><BR>";
-    echo "<center><a href='MenuCompany.html'>Volver a la carga de datos</a></center>"
+    echo "<center><a href='MenuCompany.html'>RETURN MENU</a></center>"
 ?>

@@ -1,7 +1,7 @@
 <?php
        
         $id_company = $_POST['id_company'];
-        $uri ="http://financialreport.ddns.net/verticalanalisys/data/companies/$id_company";
+        $uri ="http://financialreport.ddns.net:1024/verticalanalisys/data/companies/$id_company";
         
         $ch = curl_init($uri);
         curl_setopt($ch, CURLOPT_URL, $uri);
@@ -16,6 +16,6 @@
         curl_close($ch);
 
         echo "<BR><BR>";
-        echo "<center><a href='MenuCompany.html'>Volver a la carga de datos</a></center>"
+        echo "<center><a href='MenuCompany.html'>RETURN MENU</a></center>"
 
  ?>
