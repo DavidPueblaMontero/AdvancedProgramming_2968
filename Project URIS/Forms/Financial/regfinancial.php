@@ -1,6 +1,6 @@
 <?php
-$uri = "http://financialreport.ddns.net/verticalanalisys/data/companiesfinancialdata";
 
+$uri = "http://financialreport.ddns.net:1024/verticalanalisys/data/companiesfinancialdata";
 $id_finanacialData=$_POST['id_finanacialData'];
 $select=$_POST['select'];
 $year=$_POST['year'];

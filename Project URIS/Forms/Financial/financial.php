@@ -1,6 +1,6 @@
 <?php
 $id_finanacialData=$_POST['id_finanacialData'];
-$uri ="http://financialreport.ddns.net/verticalanalisys/data/companiesfinancialdata/$id_finanacialData";
+$uri ="http://financialreport.ddns.net:1024/verticalanalisys/data/companiesfinancialdata/$id_finanacialData";
 $financial_json = file_get_contents($uri);
 $financial_array = json_decode($financial_json, true);
 ?>
