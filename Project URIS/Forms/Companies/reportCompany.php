@@ -29,8 +29,7 @@ $data = json_decode(file_get_contents($uri), true);
             <td>Taxes</td>  
             <td>Exercise Utility</td>  
         </tr>
-            <?php 
-            
+            <?php           
                 
                 echo ("<td><p>{$data['sales']}</p></td>");
                 echo ("<td><p>{$data['salesCost']}</p></td>");
@@ -40,15 +39,45 @@ $data = json_decode(file_get_contents($uri), true);
                 echo ("<td><p>{$data['interestPaid']}</p></td>");
                 echo ("<td><p>{$data['profitBeforeTaxes']}</p></td>");
                 echo ("<td><p>{$data['taxes']}</p></td>");
-                echo ("<td><p>{$data['exerciseUtility']}</p></td></tr>");
-        
+                echo ("<td><p>{$data['exerciseUtility']}</p></td></tr>");           
+
             
             ?>
     </table>
 </body>
 <?php
+    $salesCost= intval($data['salesCost']);
+    $grossProfit= intval($data['grossProfit']);
+    $expensesAdmiSales=intval($data['expensesAdmiSales']);
+    $depreciations=intval($data['depreciations']);
+    $interestPaid=intval($data['interestPaid']);
+    $profitBeforeTaxes=intval($data['profitBeforeTaxes']);
+    $taxes=intval($data['taxes']);
+    $exerciseUtility=intval($data['exerciseUtility']);
+
+    echo "ANALISIS<br><br>";
+    echo "SALES COST.<br>";
+    echo "For every dollar that the company invoiced in {$year} approximately {$salesCost} cents destined to the purchase of merchandise<br><br>";
+    echo "GROSS PROFIT.<br>";
+    echo "For every dollar that the company invoiced in {$year} approximately {$grossProfit} cents obtained the sale of utility<br><br>";
+    echo "EXPENSES ADMINISTRATIVE SALES.<br>";
+    echo "For every dollar that the company invoiced in {$year} it spent approximately {$expensesAdmiSales} cents on administrative and sales expenses.<br> 
+    Based on this:<br>
+    In a commercial enterprise it must fluctuate between 15% to 20%.<br>
+    In manufacturing, it must fluctuate between 8% to 12%.<br> 
+    In a service company, it must fluctuate between 10% to 14%.<br><br>";
+    echo "DEPRECIATIONS.<br>";
+    echo "For every dollar that the company invoiced in {$year} approximately {$depreciations} cents destined to the purchase of fixed assets.<br><br>";
+    echo "INTEREST PAID.<br>";
+    echo "For every dollar that the company invoiced in {$year} approximately {$interestPaid} cents destined to the payment of interest owed.<br><br>";
+    echo "PROFIT BEFORES TAXES.<br>";
+    echo "For every dollar that the company invoiced in {$year} obtained approximately {$profitBeforeTaxes} cents of profit before taxes.<br><br>";
+    echo "TAXES.<br>";
+    echo "For every dollar that the company invoiced in {$year} approximately {$taxes} cents destined o the payment of taxes.<br><br>";
+    echo "EXERCISE UTILITY.<br>";
+    echo "For every dollar that the company invoiced in {$year} it obtained approximately {$exerciseUtility} cents of profit available to shareholders.<br><br>";
     echo "<BR><BR>";
-    echo "<center><a href='MenuCompany.html'>RETURN MENU</a></center>"
+    echo "<center><a href='MenuCompany.html'>RETURN MENU</a></center>";
 ?>
 
 </html>
