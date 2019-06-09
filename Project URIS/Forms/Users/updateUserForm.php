@@ -13,13 +13,13 @@
 
 <?php
        
-            $id_company = $_POST['id_company'];
             $company_uri ="http://financialreport.ddns.net:1024/verticalanalisys/data/users/$id";            
             $company_json = file_get_contents($company_uri);
             $company_array = json_decode($company_json, true);
         
             $name=$company_array["name_user"];            
-            $pass=$company_array["password"];  
+            $pass=$company_array["pass_user"];
+            $id_com=$company_array["id_company"];
 
         
          ?>
@@ -31,7 +31,7 @@
 <form action="updateUri.php?id=<?php echo $id?>" class="formoid-solid-blue" style="background-color:#FFFFFF;font-size:14px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#34495E;max-width:480px;min-width:150px" method="post"><div class="title"><h2>Update User</h2></div>
 	<div class="element-input"><label class="title"></label><div class="item-cont"><input class="large" type="text" name="id" placeholder="Id User" value="<?php echo $id;?>" disabled/><span class="icon-place"></span></div></div>
 	<div class="element-input"><label class="title"></label><div class="item-cont"><input class="large" type="text" name="name" value="<?php echo $name?>" placeholder="Name User"/><span class="icon-place"></span></div></div>
-	<div class="element-password"><label class="title"></label><div class="item-cont"><input class="large" type="password" name="password" value="<?php echo pass?>" placeholder="Password"/><span class="icon-place"></span></div></div>
+	<div class="element-password"><label class="title"></label><div class="item-cont"><input class="large" type="password" name="password" value="<?php echo $pass?>" placeholder="Password"/><span class="icon-place"></span></div></div>
 	<div class="element-select"><label class="title"></label><div class="item-cont"><div class="large"><span><select name="select" >
 	<option value="-1">Select Company</option>
 	<?php

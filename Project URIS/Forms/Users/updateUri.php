@@ -1,3 +1,7 @@
+<?php 
+$rutaServer = $_SERVER['DOCUMENT_ROOT'];
+include $rutaServer.'/check.php'; ?>
+
 <?php
 $id = $_GET['id'];
 $uri = "http://financialreport.ddns.net:1024/verticalanalisys/data/users/$id";

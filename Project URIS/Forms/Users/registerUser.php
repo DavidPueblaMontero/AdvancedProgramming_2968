@@ -1,3 +1,7 @@
+<?php 
+$rutaServer = $_SERVER['DOCUMENT_ROOT'];
+include $rutaServer.'/check.php'; ?>
+
 <?php
   $mysqli = new mysqli('localhost', 'root', '11023650', 'verticalanalisys');
 ?>
