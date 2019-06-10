@@ -9,6 +9,13 @@ $year = $_POST['year_company'];
 $uri = "http://financialreport.ddns.net:1024/verticalanalisys/data/companiesfinancialreport/$id_company/$year";
 $data = json_decode(file_get_contents($uri), true);
 ?>
+
+<?php
+  if (!isset($data['year_company'])) {
+    echo "<script type=\"text/javascript\">alert('Incorrect ID!'); window.location='http://$rutaServer';</script>";
+  }
+  ?>
+
 <html lang="en">
 
 <head>
