@@ -1,13 +1,30 @@
-<?php $form_path='searchuser_files/formoid1/form.php'; require_once $form_path; ?><!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>Search Financial Data- Formoid javascript form</title>
+	<meta charset="utf-8" />
+	<title>Search Financial Data - Formoid bootstrap forms</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body class="blurBg-false" style="background-color:#EBEBEB">
+<body class="blurBg-false" style="background-color:#d0ebbb">
 
-{{Formoid}}
+
+
+<!-- Start Formoid form-->
+<link rel="stylesheet" href="searchfinancial_files/formoid1/formoid-solid-green.css" type="text/css" />
+<script type="text/javascript" src="searchfinancial_files/formoid1/jquery.min.js"></script>
+<form action="financial.php" class="formoid-solid-green" style="background-color:#FFFFFF;font-size:14px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#34495E;max-width:480px;min-width:150px" method="post"><div class="title"><h2>Search Financial Data</h2></div>
+	<div class="element-number"><label class="title"></label><div class="item-cont"><input class="large" type="text" min="0" max="100" name="id_finanacialData" placeholder="Id Financial Data" value=""/><span class="icon-place"></span></div></div>
+<div class="submit"><input type="submit" value="Search"/></div></form><p class="frmd"><a href="http://formoid.com/v29.php">bootstrap forms</a> Formoid.com 2.9</p><script type="text/javascript" src="searchfinancial_files/formoid1/formoid-solid-green.js"></script>
+<!-- Stop Formoid form-->
+<br>
+<br>
+<!-- Start Formoid form-->
+<link rel="stylesheet" href="searchfinancial_files/formoid1/formoid-solid-green.css"  type="text/css" />
+<script type="text/javascript" src="searchfinancial_files/formoid1/jquery.min.js"></script>
+<form action="allfinancial.php"class="formoid-solid-green" style="background-color:#FFFFFF;font-size:14px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#34495E;max-width:480px;min-width:150px" method="post"><div class="title"><h2>Search All Financial Data</h2></div>
+<div class="submit"><input type="submit" value="Search"/></div></form><p class="frmd"><a href="http://formoid.com/v29.php">bootstrap forms</a> Formoid.com 2.9</p><script type="text/javascript" src="searchfinancial_files/formoid1/formoid-solid-green.js"></script>
+<!-- Stop Formoid form-->
+
 
 </body>
 </html>
