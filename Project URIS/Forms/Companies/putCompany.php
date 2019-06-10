@@ -23,5 +23,5 @@
 
 
     echo "<BR><BR>";
-    echo "<center><a href='MenuCompany.html'>RETURN MENU</a></center>"
+    echo "<center><a href='MenuCompany.php'>RETURN MENU</a></center>"
 ?>

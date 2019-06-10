@@ -10,7 +10,7 @@
 <!-- Start Formoid form-->
 <link rel="stylesheet" href="menucompany_files/formoid1/formoid-solid-blue.css" type="text/css" />
 <script type="text/javascript" src="menucompany_files/formoid1/jquery.min.js"></script>
-<form class="formoid-solid-blue" style="background-color:#FFFFFF;font-size:26px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#34495E;max-width:480px;min-width:150px" method="post" action="RegisterCompany.html"><div class="title" ><h2>Company Options</h2></div>
+<form class="formoid-solid-blue" style="background-color:#FFFFFF;font-size:26px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#34495E;max-width:480px;min-width:150px" method="post" action="RegisterCompany.php"><div class="title" ><h2>Company Options</h2></div>
 <div class="submit"><input type="submit" value="Company Register"/></div></form><p class="frmd"><a href="http://formoid.com/v29.php">jquery form validation</a> Formoid.com 2.9</p><script type="text/javascript" src="menucompany_files/formoid1/formoid-solid-blue.js"></script>
 <!-- Stop Formoid form-->
 
