@@ -1,3 +1,7 @@
+<?php 
+$rutaServer = $_SERVER['DOCUMENT_ROOT'];
+include $rutaServer.'/check.php'; ?>
+
 <?php
 
 $id_financialData = $_GET['id_financialData'];

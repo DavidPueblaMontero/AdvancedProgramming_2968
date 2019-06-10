@@ -1,3 +1,7 @@
+<?php 
+$rutaServer = $_SERVER['DOCUMENT_ROOT'];
+include $rutaServer.'/check.php'; ?>
+
 <?php
        
         $id_company = $_POST['id_company'];

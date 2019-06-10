@@ -1,3 +1,7 @@
+<?php 
+$rutaServer = $_SERVER['DOCUMENT_ROOT'];
+include $rutaServer.'/check.php'; ?>
+
 <html>
     <body>
     <form method="post" action="putCompany.php">

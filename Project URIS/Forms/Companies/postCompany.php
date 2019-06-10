@@ -1,3 +1,7 @@
+<?php 
+$rutaServer = $_SERVER['DOCUMENT_ROOT'];
+include $rutaServer.'/check.php'; ?>
+
 <?php
 
     $url= "http://financialreport.ddns.net:1024/verticalanalisys/data/companies";

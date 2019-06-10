@@ -1,3 +1,7 @@
+<?php 
+$rutaServer = $_SERVER['DOCUMENT_ROOT'];
+include $rutaServer.'/check.php'; ?>
+
 <?php
 
   $mysqli = new mysqli('financialreport.ddns.net', 'root', '11023650', 'verticalanalisys');

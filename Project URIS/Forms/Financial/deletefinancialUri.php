@@ -1,4 +1,8 @@
 <?php 
+$rutaServer = $_SERVER['DOCUMENT_ROOT'];
+include $rutaServer.'/check.php'; ?>
+
+<?php 
 $id_finanacialData = $_POST['id_finanacialData'];
 $uri = "http://financialreport.ddns.net:1024/verticalanalisys/data/companiesfinancialdata/$id_finanacialData";
 
