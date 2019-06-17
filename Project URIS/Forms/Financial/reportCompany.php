@@ -9,6 +9,8 @@ $year = $_POST['year_company'];
 $uri = "http://financialreport.ddns.net:1024/verticalanalisys/data/companiesfinancialreport/$id_company/$year";
 $data = json_decode(file_get_contents($uri), true);
 ?>
+
+
 <html lang="en">
 
 <head>
@@ -34,7 +36,6 @@ $data = json_decode(file_get_contents($uri), true);
             <td>Exercise Utility</td>  
         </tr>
             <?php           
-                
                 echo ("<td><p>{$data['sales']}</p></td>");
                 echo ("<td><p>{$data['salesCost']}</p></td>");
                 echo ("<td><p>{$data['grossProfit']}</p></td>");
@@ -58,6 +59,9 @@ $data = json_decode(file_get_contents($uri), true);
     $profitBeforeTaxes=intval($data['profitBeforeTaxes']);
     $taxes=intval($data['taxes']);
     $exerciseUtility=intval($data['exerciseUtility']);
+    if($salesCost== 0){
+        echo "<script type=\"text/javascript\">alert('Incorrect ID!'); window.location='http://$rutaServer';</script>";
+    }
 
     echo "ANALISIS<br><br>";
     echo "SALES COST.<br>";
