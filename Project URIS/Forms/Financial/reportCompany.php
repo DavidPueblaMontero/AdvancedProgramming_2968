@@ -1,3 +1,4 @@
+
 <?php 
 $rutaServer = $_SERVER['DOCUMENT_ROOT'];
 include $rutaServer.'/check.php'; ?>
@@ -87,5 +88,4 @@ $data = json_decode(file_get_contents($uri), true);
     echo "<BR><BR>";
     echo "<center><a href='menufinancial.php'>RETURN MENU</a></center>";
 ?>
-
 </html>
